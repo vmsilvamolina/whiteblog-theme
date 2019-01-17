@@ -1,0 +1,4 @@
+# Site Settings
+title: "$blogTopics | % { write $_ }"
+name: "Victor Silva"
+description: "Super blog"

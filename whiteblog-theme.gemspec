@@ -3,12 +3,14 @@
 Gem::Specification.new do |spec|
   spec.name          = "whiteblog-theme"
   spec.version       = "0.1.0"
-  spec.authors       = [""]
+  spec.authors       = ["Victor Silva"]
   spec.email         = [""]
 
-  spec.summary       = "TODO: Write a short summary, because Rubygems requires one."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{white-minimal two-column Jekyll theme.}
+  spec.homepage      = "https://github.com/vmsilvamolina/WhiteBlogTheme"
   spec.license       = "MIT"
+
+  #spec.metadata["plugin_type"] = "theme"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
