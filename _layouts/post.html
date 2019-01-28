@@ -1,5 +1,30 @@
 ---
 layout: default
 ---
+<article>
 
-{{ content }}
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="text-secondary">
+      {% if page.author %}
+        {% if page.author_url %}
+          <a href="{{ page.author_url }}">
+        {% endif %}
+        <span><span>{{ page.author }}</span></span>
+        {% if page.author_url %}
+          </a>
+        {% endif %}
+        &bull;
+      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.theme.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+    </p>
+  </header>
+
+  <div class="text-justify" id="content">
+    {{ content }}
+  </div>
+
+</article>

@@ -1,4 +1,9 @@
 # Site Settings
-title: "$blogTopics | % { write $_ }"
-name: "Victor Silva"
-description: "Super blog"
+title: WhiteBlogTheme
+author: Victor Silva
+description: Made with Love and Coffee :)
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - whiteblogtheme.gemspec
