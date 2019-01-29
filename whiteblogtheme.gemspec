@@ -4,15 +4,17 @@ Gem::Specification.new do |spec|
   spec.name          = "whiteblog-theme"
   spec.version       = "1.0.0"
   spec.authors       = ["Victor Silva"]
-  spec.email         = [""]
+  spec.email         = ["vmsilvamolina@gmail.com"]
 
-  spec.summary       = %q{}
+  spec.summary       = %q{Minimal and white blogging theme for Jekyll}
   spec.homepage      = "https://github.com/vmsilvamolina/whiteblog-theme"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.files = `git ls-files -z`.split("\x0").select do |f|
+    f.match(%r{^(_(includes|layouts|sass)/|(assets|LICENSE|README)((\.(txt|md|markdown)|$)))}i)
+  end
 
   spec.add_runtime_dependency "jekyll", "~> 3.6"
 
