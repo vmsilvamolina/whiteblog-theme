@@ -1,9 +1,10 @@
 # Site Settings
-title: WhiteBlogTheme
+title: whiteblog-theme
 author: Victor Silva
-description: Made with Love and Coffee :)
+
+permalink: /:title/ #/:categories/:title/
 
 exclude:
   - Gemfile
   - Gemfile.lock
-  - whiteblogtheme.gemspec
+  - whiteblog-theme.gemspec

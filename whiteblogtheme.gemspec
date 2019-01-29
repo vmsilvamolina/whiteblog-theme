@@ -1,13 +1,13 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "WhiteBlog-Theme"
+  spec.name          = "whiteblog-theme"
   spec.version       = "1.0.0"
   spec.authors       = ["Victor Silva"]
   spec.email         = [""]
 
   spec.summary       = %q{}
-  spec.homepage      = "https://github.com/vmsilvamolina/WhiteBlog-Theme"
+  spec.homepage      = "https://github.com/vmsilvamolina/whiteblog-theme"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
