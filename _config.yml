@@ -4,6 +4,19 @@ author: Victor Silva
 
 permalink: /:title/ #/:categories/:title/
 
+plugins:
+  - jekyll-redirect-from
+
+
+header_pages:
+#  - _pages/about.md
+#  - _pages/contact.md
+#  - _pages/setup.md
+  - _pages/github.md
+
+include:
+  - _pages
+
 exclude:
   - Gemfile
   - Gemfile.lock

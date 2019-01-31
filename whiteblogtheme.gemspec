@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_runtime_dependency "jekyll", "~> 3.6"
+  spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.14"
 
   spec.add_development_dependency "jekyll-feed", "~> 0.9"
   spec.add_development_dependency "jekyll-redirect-from", "~> 0.12"
