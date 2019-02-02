@@ -1,12 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+html {
+  overflow-y: overlay
+}
+
 body {
   background-color: #fdfdfd;
   font-family: "Nunito" !important;
 }
+
 .navbar {
+  background-color: #6f777d !important;
   a {
-    color: #6f777d !important;
+    //color: #6f777d !important;
+    font-weight: 600;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+  
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+  &.collapsed {
+    .top-bar {
+      transform: rotate(0);      
+    }
+    .middle-bar {
+      opacity: 1;
+    }
+    .bottom-bar {
+      transform: rotate(0);
+    }
   }
 }
 
@@ -27,11 +71,11 @@ div#content.text-justify {
 }
 
 .post {
-  padding-top: 5.5rem!important;
+  padding-top: 2.5rem!important;
 }
 
 .posts-list {
-  padding-top: 4.0rem!important;
+  padding-top: 1.5rem!important;
 }
 
 #content .py-2 {
