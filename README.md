@@ -1,7 +1,7 @@
 # whiteblog-theme
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[!Gem Downloads (https://img.shields.io/gem/dt/whiteblog-theme.svg?colorB=brightgreen&style=flat)](https://rubygems.org/gems/whiteblog-theme)
+![Gem downloads](https://img.shields.io/gem/dt/whiteblog-theme.svg?colorB=brightgreen&style=flat)
 
 Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
 
