@@ -8,6 +8,13 @@ To experiment with this code, add some sample content and run `bundle exec jekyl
 
 TODO: Delete this and the text above, and describe your gem
 
+## Live preview
+
+[https://blog.victorsilva.com.uy/whiteblog-theme/](https://blog.victorsilva.com.uy/whiteblog-theme/)
+
+## Screenshot
+
+![Screenshot of whiteblog-theme](https://raw.githubusercontent.com/vmsilvamolina/whiteblog-theme/master/screenshot.png)
 
 ## Installation
 
@@ -37,7 +44,7 @@ TODO: Write usage instructions here. Describe your available layouts, includes, 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vmsilvamolina/whiteblog-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
@@ -51,4 +58,3 @@ To add a custom directory to your theme-gem, please edit the regexp in `whiteblo
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
