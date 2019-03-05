@@ -117,32 +117,6 @@ blockquote {
   color: #6f777d !important;
 }
 
-/* Categories: Color */
-
-a.badge-Jekyll {
-  color: #fff;
-  background-color: #F8BD66;
-}
-a.badge-Welcome {
-  color: #fff;
-  background-color: #42C19E;
-}
-
-a.badge-Ruby {
-  color: #fff;
-  background-color: #EC586F;
-}
-
-a.badge-Cloud {
-  color: #fff;
-  background-color: #4A8AB2;
-}
-
-a.badge-Development {
-  color: #fff;
-  background-color: #5A1F6D;
-}
-
 /* Categories: Effect */
 
 #category-badge a:hover, #category-badge a:focus, #category-badge a:active {
@@ -162,21 +136,3 @@ a.badge-Development {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-
-/*
-.hvr-grow-rotate {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
-}
-*/
