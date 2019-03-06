@@ -1,5 +1,5 @@
 trigger:
-- gh-pages
+- master
 
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -14,10 +14,10 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
-    containerCommand: 'jekyll build --drafts --future'
+    containerCommand: '/bin/bash -c "chmod a+wx /srv/jekyll && jekyll build --future"'
     detached: false
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'drop'
+    artifactName: 'site'
     pathtoPublish: '$(build.binariesDirectory)'
     publishLocation: 'Container'
