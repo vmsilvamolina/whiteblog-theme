@@ -14,7 +14,7 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
-    containerCommand: 'jekyll build --drafts --future'
+    containerCommand: 'chmod a+w Gemfile.lock && jekyll build --drafts --future'
     detached: false
 - task: PublishBuildArtifacts@1
   inputs:
