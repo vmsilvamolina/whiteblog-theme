@@ -18,6 +18,6 @@ steps:
     detached: false
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'drop'
+    artifactName: 'site'
     pathtoPublish: '$(build.binariesDirectory)'
     publishLocation: 'Container'
