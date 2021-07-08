@@ -10,7 +10,7 @@ To experiment with this code, add some sample content and run `bundle exec jekyl
 
 ## Live preview
 
-[https://blog.victorsilva.com.uy/whiteblog-theme/](https://blog.victorsilva.com.uy/whiteblog-theme/)
+[https://whiteblog-theme.victorsilva.com.uy/](https://whiteblog-theme.victorsilva.com.uy/)
 
 ## Screenshot
 
