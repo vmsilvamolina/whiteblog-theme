@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'Ubuntu-latest'
 
 steps:
 - task: Docker@0
@@ -14,7 +14,7 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
-    containerCommand: '/bin/bash -c "chmod a+wx /srv/jekyll && jekyll build --future --drafts"'
+    containerCommand: '/bin/bash -c "chmod a+wx /srv/jekyll && bundle install && jekyll build --future --drafts"'
     detached: false
 - task: PublishBuildArtifacts@1
   inputs:
