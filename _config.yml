@@ -20,4 +20,4 @@ include:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - whiteblog-theme.gemspec
+  - whiteblogtheme.gemspec
