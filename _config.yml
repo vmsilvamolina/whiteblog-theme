@@ -13,6 +13,7 @@ header_pages:
 #  - _pages/contact.md
 #  - _pages/setup.md
   - _pages/github.md
+  - _pages/categories.md
 
 include:
   - _pages

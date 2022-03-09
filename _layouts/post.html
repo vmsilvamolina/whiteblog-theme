@@ -18,7 +18,7 @@ layout: default
       {% endif %}
       <h5 id="category-badge">
       {% for category in categories %}
-        <a href="{{site.baseurl}}/categories/#{{category|slugize}}" class="badge badge-{{category}} badge-bounce-in" >{{category}}</a>
+        <a href="{{site.baseurl}}/categories/{{category|slugize}}" class="badge badge-{{category}} badge-bounce-in" >{{category}}</a>
         {% unless forloop.last %}&nbsp;{% endunless %}
       {% endfor %}
       </h5>
