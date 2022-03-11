@@ -12,10 +12,16 @@ body {
 
 main {
   padding-bottom: 2.5rem;
+  height: Calc(100vh - 60px);
+  div.container#post {
+    height: 100%;
+  }
 }
+
 
 .navbar {
   background-color: #8792A3 !important;
+  padding: 10px 16px !important;
   a {
     //color: #6f777d !important;
     font-weight: 600;
@@ -77,6 +83,7 @@ div#content.text-justify {
 
 .post {
   padding-top: 3rem!important;
+  height: 100%;
 }
 
 .posts-list {
