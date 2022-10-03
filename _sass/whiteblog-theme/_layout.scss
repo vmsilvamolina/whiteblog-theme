@@ -12,18 +12,16 @@ body {
 
 main {
   padding-bottom: 2.5rem;
-  height: Calc(100vh - 60px);
   div.container#post {
     height: 100%;
+    position: relative;
   }
 }
-
 
 .navbar {
   background-color: #8792A3 !important;
   padding: 10px 16px !important;
   a {
-    //color: #6f777d !important;
     font-weight: 600;
   }
 }
@@ -40,13 +38,16 @@ main {
     width: 22px;
     transition: all 0.2s;
   }
+
   .top-bar {
     transform: rotate(45deg);
     transform-origin: 10% 10%;
   }
+
   .middle-bar {
     opacity: 0;
   }
+
   .bottom-bar {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
@@ -125,9 +126,8 @@ blockquote {
 }
 
 #posts-navigation {
-  padding-top: 2.5rem;
+  padding-top: 4.5rem;
   padding-bottom: 3.5rem;
-  position: absolute;
   bottom: 0;  
 }
 
@@ -157,4 +157,27 @@ blockquote {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
+}
+
+#content ul.posts-list h1 {
+  a::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  a::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: rgba(117, 11, 11, 0);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
 }
