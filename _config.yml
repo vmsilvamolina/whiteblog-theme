@@ -22,3 +22,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - whiteblogtheme.gemspec
+
+comments:
+  provider               : "disqus" # false (default), "disqus"
+  disqus:
+    shortname            : "vmsilvamolina"
