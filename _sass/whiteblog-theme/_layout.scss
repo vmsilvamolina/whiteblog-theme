@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&Fira+Sans&family=Montserrat&display=swap');
+
+//Color palette variables:
+$background: #F5F5F5;
+$navbar: #364F6B;
+$highlight: #3FC1C9;
 
 body {
-  background-color: #fdfdfd;
-  font-family: "Nunito" !important;
-  display: flex;
-  flex-direction: column;
+  background-color: $background;
+  font-family: "Montserrat";
   overflow-y: scroll;
   position: relative;
   min-height: 100vh;
@@ -12,14 +15,14 @@ body {
 
 main {
   padding-bottom: 2.5rem;
-  div.container#post {
-    height: 100%;
-    position: relative;
-  }
+}
+
+.container {
+  padding: 0em;
 }
 
 .navbar {
-  background-color: #8792A3 !important;
+  background-color: $navbar !important;
   padding: 10px 16px !important;
   a {
     font-weight: 600;
@@ -85,6 +88,7 @@ div#content.text-justify {
 .post {
   padding-top: 3rem!important;
   height: 100%;
+  padding-bottom: 5em;
 }
 
 .posts-list {
@@ -114,21 +118,32 @@ blockquote {
   white-space: pre-wrap;
 }
 
+.underline {
+  font-family: "Nunito";
+  display: table;
+  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, $highlight 8px);
+}   
+
 .post .text-secondary {
   margin-bottom: 8px !important;
 }
 
 .row .previous, .row .next {
-  font-size: 25px;
+  font-size: 20px;
+  text-align: right;
   a {
     color: #6f777d !important;
   }
 }
 
+#post {
+  flex-grow: 1;
+  position: relative;
+}
+
 #posts-navigation {
-  padding-top: 4.5rem;
-  padding-bottom: 3.5rem;
-  bottom: 0;  
+  padding-bottom: 1.5rem;
+  bottom: 0;
 }
 
 #site-footer {
@@ -136,7 +151,12 @@ blockquote {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 2.5rem;
+  height: 4rem;
+}
+
+a.badge {
+  color: #fff;
+  background-color: #FC5185;
 }
 
 /* Categories: Effect */
