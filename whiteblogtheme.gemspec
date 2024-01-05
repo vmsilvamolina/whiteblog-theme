@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "whiteblog-theme"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.6"
   spec.authors       = ["Victor Silva"]
   spec.email         = ["vmsilvamolina@gmail.com"]
 
@@ -12,11 +12,9 @@ Gem::Specification.new do |spec|
 
   spec.metadata["plugin_type"] = "theme"
 
-  spec.files = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(_(includes|layouts|sass)/|(assets|LICENSE|README)((\.(txt|md|markdown)|$)))}i)
-  end
+  spec.files          =  `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_pages|_sass|_includes|LICENSE|README)}i) }
 
-  spec.add_runtime_dependency "jekyll", "~> 3.9"
+  spec.add_runtime_dependency "jekyll", "~> 4.3.2"
   spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.16"
 
   spec.add_development_dependency "jekyll-feed", "~> 0.15.1"

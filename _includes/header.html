@@ -1,37 +1,24 @@
-<div class="collapse bg-ligth" id="navbarHeader">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-md-7 py-4">
-        <h4>Contact</h4>
-        <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-      </div>
-      <div class="col-sm-4 offset-md-1 py-4">
-        <h4>Pages</h4>
-        <ul class="list-unstyled">
-        {% assign default_paths = site.pages | map: "path" %}
-        {% assign page_paths = site.header_pages | default: default_paths %}
-        {% if page_paths %}
-          {% for path in page_paths %}
-            {% assign my_page = site.pages | where: "path", path | first %}
-            {% if my_page.title %}
-              <li class="nav-item"><a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid container">
+    <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <div class="justify-content-end">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          {% assign default_paths = site.pages | map: "path" %}
+          {% assign page_paths = site.header_pages | default: default_paths %}
+          {% if page_paths %}
+            {% for path in page_paths %}
+              {% assign my_page = site.pages | where: "path", path | first %}
+              {% if my_page.title %}
+                <li class="nav-item"><a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
     </div>
   </div>
-</div>
-<div class="navbar navbar-dark box-shadow">
-  <div class="container d-flex justify-content-between">
-    <a class="navbar-brand d-flex align-items-center" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    <div data-toggle="collapse" data-target="#navbarHeader" class="navbar-toggler-icon" id="nav-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-  </div>
-</div>
+</nav>

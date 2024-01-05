@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&Fira+Sans&family=Montserrat&display=swap');
 
 //Color palette variables:
-$background: #F5F5F5;
-$navbar: #364F6B;
-$highlight: #3FC1C9;
+$firstColor: #F5F5F5;
+$secondColor: #364F6B;
+$thirdColor: #3FC1C9;
+$fourthColor: #FC5185;
 
 body {
-  background-color: $background;
+  background-color: $firstColor;
   font-family: "Montserrat";
   overflow-y: scroll;
   position: relative;
@@ -22,10 +23,11 @@ main {
 }
 
 .navbar {
-  background-color: $navbar !important;
+  background-color: $secondColor !important;
   padding: 10px 16px !important;
   a {
     font-weight: 600;
+    color: $firstColor !important;
   }
 }
 
@@ -121,8 +123,17 @@ blockquote {
 .underline {
   font-family: "Nunito";
   display: table;
-  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, $highlight 8px);
-}   
+  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, $thirdColor 8px);
+}
+
+#search-input {
+  margin: 2em 0em;
+  width: 100%;
+}
+
+input {
+  font-family: "Montserrat" !important;
+}
 
 .post .text-secondary {
   margin-bottom: 8px !important;
@@ -134,6 +145,10 @@ blockquote {
   a {
     color: #6f777d !important;
   }
+}
+
+.previous {
+  text-align: left !important;
 }
 
 #post {
@@ -156,7 +171,7 @@ blockquote {
 
 a.badge {
   color: #fff;
-  background-color: #FC5185;
+  background-color: $fourthColor;
 }
 
 /* Categories: Effect */
