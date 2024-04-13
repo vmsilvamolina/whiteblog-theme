@@ -1,0 +1,23 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-latest'
+
+steps:
+- task: Docker@0
+  displayName: 'Run Jekyll'
+  inputs:
+    containerRegistryType: 'Container Registry'
+    action: 'Run an image'
+    imageName: 'jekyll/jekyll:latest'
+    volumes: |
+      $(build.sourcesDirectory):/srv/jekyll
+      $(build.binariesDirectory):/srv/jekyll/_site
+    containerCommand: '/bin/bash -c "chmod a+wx /srv/jekyll && bundle install && jekyll build --future --drafts"'
+    detached: false
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'site'
+    pathtoPublish: '$(build.binariesDirectory)'
+    publishLocation: 'Container'
