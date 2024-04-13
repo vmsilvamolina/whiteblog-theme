@@ -7,6 +7,9 @@ excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum te
 categories:
  - Jekyll
  - Welcome
+tags:
+ - test
+ - anotherTag
 ---
 
 ## Title <h2>

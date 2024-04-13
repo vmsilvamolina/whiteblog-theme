@@ -38,19 +38,6 @@ Or install it yourself as:
 
     $ gem install whiteblog-theme
 
-## Usage
-
-### Colorful Categories
-
-Bring color to your categories editing the following setting inside `_sass\whiteblog-theme\_category_colors.scss`. For example if you add a new category named "Markdown", you need to add the following code with the color selected:
-
-`
-a.badge-Markdown {
-  color: #fff;
-  background-color: #6967CE;
-}
-`
-
 
 ## Contributing
 

@@ -2,31 +2,32 @@
 layout: default
 ---
 
-<div id="content">
+<article class="post">
+  <div id="content">
 
-  {% assign posts = site.posts %}
+    {% assign posts = site.posts %}
 
-  <ul class="list-unstyled m-0 posts-list">
-    {% assign date_format = "%b %-d, %Y" %}
-    {% for post in posts %}
-      <li class="py-2">
+    <ul class="list-unstyled m-0 posts-list">
+      {% assign date_format = "%b %-d, %Y" %}
+      {% for post in posts %}
+        <li class="py-2">
+          <h1 class="mt-1 mb-3 h3 title-post-resume underline">
+            <a class="title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h1>
 
-        <h1 class="mt-1 mb-3 h3 title-post-resume underline">
-          <a class="title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h1>
+          <span class="text-secondary">{{ post.date | date: date_format }}</span>
 
-        <span class="text-secondary">{{ post.date | date: date_format }}</span>
-
-        <div class="text-justify">
-          {{ post.excerpt }}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+          <div>
+            {{ post.excerpt }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
 
 
-  {% if site.plugins contains "jekyll-feed" %}
-    <a href="{{ "/feed.xml" | relative_url }}"><div id="rss-icon" class="mb-2"></div></a>
-  {% endif %}
+    {% if site.plugins contains "jekyll-feed" %}
+      <a href="{{ "/feed.xml" | relative_url }}"><div id="rss-icon" class="mb-2"></div></a>
+    {% endif %}
 
-</div>
+  </div>
+</article>

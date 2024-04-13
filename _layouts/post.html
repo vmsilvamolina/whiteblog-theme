@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<article class="post container">
+<article class="post">
 
-  <div class="container" id="posts-navigation">
+  <div id="posts-navigation">
     <div class="row">
-      <div class="previous col text-left">
+      <div class="previous col">
         {% if page.previous.url %}
           <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
         {% endif %}
@@ -42,6 +42,20 @@ layout: default
 
   <div class="text-justify" id="content">
     {{ content }}
+  </div>
+
+  <div>
+  </div>
+
+  <div class="text-final" id="share-links">
+    <h5>Share this post</h5>
+    <div class="row">
+      <div class="col float-start">
+        <a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener" title="Share on Twitter">X.com</a>
+      </div>
+      <div class="col float-end">
+        <a class="float-end" href="#blog-title">Back to Top!</a>
+      </div>
   </div>
 
   {% if site.comments.provider and page.comments %}
