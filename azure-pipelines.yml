@@ -10,7 +10,7 @@ steps:
   inputs:
     containerRegistryType: 'Container Registry'
     action: 'Run an image'
-    imageName: 'jekyll/jekyll:4.1.0'
+    imageName: 'jekyll/jekyll:4.2.2'
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
