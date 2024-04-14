@@ -6,6 +6,7 @@ permalink: /:title/ #/:categories/:title/
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-gist
 
 
 header_pages:
