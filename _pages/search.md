@@ -12,7 +12,7 @@ permalink: /search/
   </div>
 </article>
 
-<script src="/assets/jekyll-search.min.js" type="text/javascript"></script>
+<script src="/assets/js/jekyll-search.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 SimpleJekyllSearch({
   searchInput: document.getElementById('search-input'),
