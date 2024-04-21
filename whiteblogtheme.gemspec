@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "whiteblog-theme"
-  spec.version       = "0.0.9"
+  spec.version       = "0.0.10"
   spec.authors       = ["Victor Silva"]
   spec.email         = ["vmsilvamolina@gmail.com"]
 
