@@ -200,43 +200,14 @@ a.badge {
 }
 
 .underline {
-  font-family: "Space Grotesk";
-  display: table;
-  // background-image: linear-gradient(180deg,rgba(255,255,255,0) 65%, $secondColor 8px);
-  background-image: linear-gradient(to bottom, transparent 50%, $secondColor 50%);
-  -webkit-box-decoration-break: clone;
-  -o-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: all 0.3s linear;
-  position: relative;
-  &::before {
-    content: '';
-    background-color: $secondColor;
-    position: absolute;
-    left: 0;
-    bottom: 3px;
-    width: 100%;
-    height: 8px;
-    z-index: -1;
-    transition: all .3s ease-in-out;
-  }
-  
-  &:hover::before {
-    bottom: 0;
-    height: 100%;
-  }
-  
-}
-
-.nuevo {
   text-decoration: none;
-  box-shadow: inset 0 -15px 0 $secondColor, 0 2px 0 $secondColor;
+  box-shadow: inset 0 -13px 0 $secondColor, 0 0px 0 $secondColor;
   transition: box-shadow .3s;
   color: inherit;
   overflow: hidden;
   // font-size: 2rem;
 }
 
-.nuevo:hover {
+.underline:hover {
   box-shadow: inset 0 -45px 0 $secondColor, 0 5px 0 $secondColor;
 }
