@@ -19,7 +19,7 @@ layout: default
   </div>
 
   <header>
-    <h1 class="h2">
+    <h1>
       <span class="underline">{{ page.title | escape }}</span>
     </h1>
     <p class="text-secondary">
@@ -46,22 +46,20 @@ layout: default
     {{ content }}
   </div>
 
-  <div>
-  </div>
+  <div class="row">
+    {% if site.addons.share_post %}
+      {% include sharepost.html %}
+    {% endif %}
 
-  <div class="text-final" id="share-links">
-    <h5>Share this post</h5>
-    <div class="row">
-      <div class="col float-start">
-        <a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener" title="Share on Twitter">X.com</a>
-      </div>
-      <div class="col float-end">
-        <a class="float-end" href="#blog-title">Back to Top!</a>
-      </div>
-  </div>
+    {% if site.addons.back_to_top %}
+      {% include backtotop.html %}
+    {% endif %}
 
-  {% if site.comments.provider and page.comments %}
-    {% include comments.html %}
-  {% endif %}
+    {% if site.comments.provider%}
+      {% if site.comments.provider == "disqus" %}
+        {% include comments-providers/disqus.html %}
+      {% endif %}
+    {% endif %}
+  </div>
 
 </article>

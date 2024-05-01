@@ -191,6 +191,27 @@ a.badge {
   text-decoration: none;
 }
 
+.back {
+  margin-top: 45px !important;
+  font-size: 30px;
+  color: $thirdColor;
+  border-radius: 10px;
+  border: 2px solid $thirdColor;
+  padding: 1px 10px;
+}
+
+#share-links ul {
+  list-style-type: none;
+  padding-left: 0px;
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 /* Effects */
 
 #category-badge a:hover, #category-badge a:focus, #category-badge a:active {
@@ -199,15 +220,23 @@ a.badge {
   transform: scale(1.1);
 }
 
-.underline {
+h1 > .underline {
   text-decoration: none;
-  box-shadow: inset 0 -13px 0 $secondColor, 0 0px 0 $secondColor;
+  box-shadow: inset 0 -19px 0 $secondColor, 0 0px 0 $secondColor;
   transition: box-shadow .3s;
   color: inherit;
   overflow: hidden;
   // font-size: 2rem;
 }
 
+a > .underline {
+  text-decoration: none;
+  box-shadow: inset 0 -14px 0 $secondColor, 0 0px 0 $secondColor;
+  transition: box-shadow .3s;
+  color: inherit;
+  overflow: hidden;
+}
+
 .underline:hover {
-  box-shadow: inset 0 -45px 0 $secondColor, 0 5px 0 $secondColor;
+  box-shadow: inset 0 -45px 0 $secondColor, 0 0px 0 $secondColor;
 }
