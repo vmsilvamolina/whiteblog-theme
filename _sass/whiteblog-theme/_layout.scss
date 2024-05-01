@@ -191,6 +191,27 @@ a.badge {
   text-decoration: none;
 }
 
+.back {
+  margin-top: 45px !important;
+  font-size: 30px;
+  color: $thirdColor;
+  border-radius: 10px;
+  border: 2px solid $thirdColor;
+  padding: 1px 10px;
+}
+
+#share-links ul {
+  list-style-type: none;
+  padding-left: 0px;
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 /* Effects */
 
 #category-badge a:hover, #category-badge a:focus, #category-badge a:active {
