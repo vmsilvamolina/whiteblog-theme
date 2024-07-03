@@ -8,6 +8,9 @@ $firstColor: #F5F5F5;
 $secondColor: #44cdd5;
 // $thirdColor: #A64AC9;
 $thirdColor: #614bc3;
+// $fourthColor: #000;
+$fourthColor: #212529;
+$fifthColor: #6C757D;
 
 html {
   scroll-behavior: smooth;
@@ -15,6 +18,7 @@ html {
 
 body {
   background-color: $firstColor;
+  color: $fourthColor;
   font-family: "Space Grotesk";
   overflow-y: scroll;
   position: relative;
@@ -80,7 +84,7 @@ main {
 }
 
 #nav-header {
-  border-bottom: 1px solid #e9ecef !important;
+  border-bottom: 1px solid $firstColor !important;
 }
 
 #nav-container {
@@ -102,7 +106,7 @@ main {
 }
 
 .title-post-resume a {
-  color: #2F343D !important;
+  color: $fourthColor !important;
 }
 
 .text-justify {
@@ -125,7 +129,7 @@ main {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #5B6B84;
+  border-left: 10px solid #F39237;
   margin: 1.5em 0px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -153,13 +157,15 @@ input {
 
 .post .text-secondary {
   margin-bottom: 8px !important;
+  color: $fifthColor;
+  font-weight: bold;
 }
 
 .row .previous, .row .next {
   font-size: 20px;
   text-align: right;
   a {
-    color: #6f777d !important;
+    color: $fourthColor !important;
   }
 }
 
@@ -178,7 +184,7 @@ input {
 }
 
 #site-footer {
-  color: #6f777d !important;
+  color: $fourthColor !important;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -215,7 +221,7 @@ a.badge {
 /* Effects */
 
 #category-badge a:hover, #category-badge a:focus, #category-badge a:active {
-  color: #fff;
+  color: $firstColor;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
