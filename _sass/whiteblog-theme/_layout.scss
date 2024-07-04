@@ -11,6 +11,10 @@ $thirdColor: #614bc3;
 // $fourthColor: #000;
 $fourthColor: #212529;
 $fifthColor: #6C757D;
+// $sixthColor: #FF8484;
+// $sixthColor: #26C485;
+$sixthColor: #25E498;
+
 
 html {
   scroll-behavior: smooth;
@@ -37,9 +41,33 @@ main {
 .navbar {
   background-color: $firstColor !important;
   padding: 30px 0px !important;
-  a {
+  // a {
+  //   font-weight: 600;
+  //   // color: $firstColor !important;
+  // }
+  a#blog-title{
+    position: relative;
+    font-weight: bold;
     font-weight: 600;
-    // color: $firstColor !important;
+    z-index: 0;
+    &::before {
+      content: '';
+      background-color: $sixthColor;
+      left: -10px;
+      position: absolute;
+      bottom: 1px;
+      width: 100%;
+      height: 8px;
+      z-index: -1;
+      transition: all .3s ease-in-out;
+    }
+    
+    &:hover::before {
+      left: -10px;
+      bottom: 0;
+      height: 100%;
+      width: calc(110% + 5px);
+    }
   }
 }
 
@@ -148,7 +176,7 @@ blockquote {
 
 #search-input {
   margin: 2em 0em;
-  width: 100%;
+  width: 50%;
 }
 
 input {
@@ -189,6 +217,11 @@ input {
   bottom: 0;
   width: 100%;
   height: 4rem;
+  a {
+    color: $fourthColor;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 a.badge {
@@ -213,6 +246,8 @@ a.badge {
     padding-top: 5px;
     padding-bottom: 5px;
     a {
+      color: $fourthColor;
+      font-weight: bold;
       text-decoration: none;
     }
   }
@@ -245,4 +280,28 @@ a > .underline {
 
 .underline:hover {
   box-shadow: inset 0 -45px 0 $secondColor, 0 0px 0 $secondColor;
+}
+
+.link {
+	position: relative;
+	font-weight: bold;
+	
+	&::before {
+		content: '';
+		background-color: $sixthColor;
+		position: absolute;
+		left: 3%;
+		bottom: 1px;
+		width: 100%;
+		height: 8px;
+		z-index: -1;
+		transition: all .3s ease-in-out;
+	}
+	
+	&:hover::before {
+		left: -5px;
+		bottom: 0;
+		height: 100%;
+		width: calc(100% + 5px);
+	}	
 }

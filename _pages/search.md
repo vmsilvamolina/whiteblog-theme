@@ -5,9 +5,11 @@ layout: default
 permalink: /search/
 ---
 <article class="post">
-  <h1 class="underline">Search</h1>
+  <h1>
+    <span class="underline">Search</span>
+  </h1>
   <div id="search-container">
-    <input type="text" id="search-input" placeholder="search...">
+    <input type="text" id="search-input" placeholder="Search for interesting stuff... or maybe not...">
     <ul id="results-container"></ul>
   </div>
 </article>
