@@ -2,17 +2,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 //Color palette variables:
-// $firstColor: #FFF;
 $firstColor: #F5F5F5;
-// $secondColor: #19E9E0;
 $secondColor: #44cdd5;
-// $thirdColor: #A64AC9;
 $thirdColor: #614bc3;
-// $fourthColor: #000;
 $fourthColor: #212529;
 $fifthColor: #6C757D;
-// $sixthColor: #FF8484;
-// $sixthColor: #26C485;
 $sixthColor: #25E498;
 
 
@@ -41,10 +35,7 @@ main {
 .navbar {
   background-color: $firstColor !important;
   padding: 30px 0px !important;
-  // a {
-  //   font-weight: 600;
-  //   // color: $firstColor !important;
-  // }
+  
   a#blog-title{
     position: relative;
     font-weight: bold;
@@ -267,6 +258,7 @@ h1 > .underline {
   transition: box-shadow .3s;
   color: inherit;
   overflow: hidden;
+  font-size: 2rem;
 }
 
 a > .underline {
