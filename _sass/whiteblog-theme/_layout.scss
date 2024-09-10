@@ -27,19 +27,20 @@ main {
 }
 
 .container {
-  padding: 0em; 
+  padding: 0em;
   max-width: 80% !important;
 }
 
 .navbar {
   background-color: $firstColor !important;
   padding: 30px 0px !important;
-  
-  a#blog-title{
+
+  a#blog-title {
     position: relative;
     font-weight: bold;
     font-weight: 600;
     z-index: 0;
+
     &::before {
       content: '';
       background-color: $sixthColor;
@@ -51,7 +52,7 @@ main {
       z-index: -1;
       transition: all .3s ease-in-out;
     }
-    
+
     &:hover::before {
       left: -10px;
       bottom: 0;
@@ -64,7 +65,7 @@ main {
 .navbar-toggler {
   border: none;
   background: transparent !important;
-  
+
   &:hover {
     background: transparent !important;
   }
@@ -90,11 +91,13 @@ main {
 
   &.collapsed {
     .top-bar {
-      transform: rotate(0);      
+      transform: rotate(0);
     }
+
     .middle-bar {
       opacity: 1;
     }
+
     .bottom-bar {
       transform: rotate(0);
     }
@@ -136,13 +139,13 @@ main {
 }
 
 .post {
-  padding-top: 3rem!important;
+  padding-top: 3rem !important;
   height: 100%;
   padding-bottom: 6em;
 }
 
 #content .py-2 {
-  padding-top: 1.5rem!important;
+  padding-top: 1.5rem !important;
 }
 
 blockquote {
@@ -150,7 +153,8 @@ blockquote {
   border-left: 10px solid #F39237;
   margin: 1.5em 0px;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
   p {
     display: inline;
   }
@@ -175,8 +179,8 @@ blockquote {
     top: 8px;
     right: 8px;
     color: $firstColor;
-    background: none; 
-    border: none; 
+    background: none;
+    border: none;
   }
 
   button:hover {
@@ -199,9 +203,11 @@ input {
   font-weight: bold;
 }
 
-.row .previous, .row .next {
+.row .previous,
+.row .next {
   font-size: 20px;
   text-align: right;
+
   a {
     color: $fourthColor !important;
   }
@@ -227,6 +233,7 @@ input {
   bottom: 0;
   width: 100%;
   height: 4rem;
+
   a {
     color: $fourthColor;
     font-weight: bold;
@@ -256,9 +263,11 @@ svg {
 #share-links ul {
   list-style-type: none;
   padding-left: 0px;
+
   li {
     padding-top: 5px;
     padding-bottom: 5px;
+
     a {
       color: $fourthColor;
       font-weight: bold;
@@ -269,13 +278,15 @@ svg {
 
 /* Effects */
 
-#category-badge a:hover, #category-badge a:focus, #category-badge a:active {
+#category-badge a:hover,
+#category-badge a:focus,
+#category-badge a:active {
   color: $firstColor;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-h1 > .underline {
+h1>.underline {
   text-decoration: none;
   box-shadow: inset 0 -19px 0 $secondColor, 0 0px 0 $secondColor;
   transition: box-shadow .3s;
@@ -284,7 +295,7 @@ h1 > .underline {
   font-size: 2rem;
 }
 
-a > .underline {
+a>.underline {
   text-decoration: none;
   box-shadow: inset 0 -14px 0 $secondColor, 0 0px 0 $secondColor;
   transition: box-shadow .3s;
@@ -297,25 +308,25 @@ a > .underline {
 }
 
 .link {
-	position: relative;
-	font-weight: bold;
-	
-	&::before {
-		content: '';
-		background-color: $sixthColor;
-		position: absolute;
-		left: 3%;
-		bottom: 1px;
-		width: 100%;
-		height: 8px;
-		z-index: -1;
-		transition: all .3s ease-in-out;
-	}
-	
-	&:hover::before {
-		left: -2px;
-		bottom: 0;
-		height: 100%;
-		width: calc(100% + 2px);
-	}	
+  position: relative;
+  font-weight: bold;
+
+  &::before {
+    content: '';
+    background-color: $sixthColor;
+    position: absolute;
+    left: 3%;
+    bottom: 1px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover::before {
+    left: -2px;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 2px);
+  }
 }
