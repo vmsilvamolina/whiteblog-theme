@@ -1,18 +1,14 @@
 ---
 title: Search
 author: Victor Silva
-layout: default
+layout: page
 permalink: /search/
 ---
-<article class="post">
-  <h1>
-    <span class="underline">Search</span>
-  </h1>
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search for interesting stuff... or maybe not...">
-    <ul id="results-container"></ul>
-  </div>
-</article>
+
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="Search for interesting stuff... or maybe not...">
+  <ul id="results-container"></ul>
+</div>
 
 <script src="/assets/js/jekyll-search.min.js" type="text/javascript"></script>
 <script type="text/javascript">

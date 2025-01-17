@@ -7,10 +7,10 @@ layout: default
 
     {% assign posts = site.posts %}
 
-    <ul class="list-unstyled m-0 posts-list">
+    <ul>
       {% assign date_format = "%b %-d, %Y" %}
       {% for post in posts %}
-        <li class="py-2">
+        <li class="post-resume">
           <h1 class="mt-1 mb-3 h3 title-post-resume">
             <a class="title-link" href="{{ post.url | relative_url }}"><span class="underline">{{ post.title | escape }}</span></a>
           </h1>
