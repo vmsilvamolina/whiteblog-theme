@@ -1,5 +1,5 @@
 # Site Settings
-title: whiteblog-theme
+title: $blogTopics | % { write $_ }
 author: Victor Silva
 
 permalink: /:title/ #/:categories/:title/
@@ -33,3 +33,7 @@ comments:
   provider               : "disqus"             # false (default), "disqus"
   disqus:
     shortname            : "vmsilvamolina"
+
+analytics:
+  google:
+    tracking_id          : "G-PY9VSRJ6KW"         # false (default), "UA-XXXXX-X"
