@@ -1,5 +1,5 @@
 # Site Settings
-title: $blogTopics | % { write $_ }
+title: whiteblog-theme
 author: Victor Silva
 
 permalink: /:title/ #/:categories/:title/
@@ -36,4 +36,4 @@ comments:
 
 analytics:
   google:
-    tracking_id          : "G-PY9VSRJ6KW"         # false (default), "UA-XXXXX-X"
+    tracking_id          : "G-PY9VSRJ6KW"         # false (default), "G-XXXXXXXXXX"
