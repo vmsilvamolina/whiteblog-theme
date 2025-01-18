@@ -14,10 +14,10 @@ addons:
 
 
 header_pages:
-#  - _pages/about.md
-#  - _pages/contact.md
-#  - _pages/setup.md
+  # - _pages/contact.md
+  # - _pages/setup.md
   # - _pages/github.md
+  - _pages/about.md
   - _pages/search.md
   - _pages/categories.md
 
