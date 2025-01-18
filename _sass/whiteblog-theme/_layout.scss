@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-/* Variables y configuración global */
 :root {
   --color-bg: #F5F5F5;
   --color-accent: #44cdd5;
@@ -14,11 +13,10 @@
   --transition-default: all 0.3s ease-in-out;
 }
 
-/* Reset y estilos base */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -41,7 +39,6 @@ body {
   overflow-y: scroll;
 }
 
-/* Layout containers */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -51,7 +48,6 @@ main {
   padding-bottom: 4rem;
 }
 
-/* Navigation */
 .navbar {
   width: 100%;
   background-color: var(--color-bg);
@@ -85,7 +81,6 @@ main {
   white-space: nowrap;
 }
 
-/* Enlaces y efectos hover */
 .link {
   position: relative;
   font-weight: bold;
@@ -137,7 +132,6 @@ a > .underline {
   box-shadow: inset 0 -45px 0 var(--color-accent), 0 0 0 var(--color-accent);
 }
 
-/* Blog title link effect */
 a#blog-title {
   position: relative;
   font-weight: 600;
@@ -163,7 +157,6 @@ a#blog-title:focus::before {
   width: calc(110% + 5px);
 }
 
-/* Navigation toggle */
 .navbar-toggler {
   border: none;
   background: transparent;
@@ -212,13 +205,37 @@ a#blog-title:focus::before {
   transform-origin: 10% 90%;
 }
 
-/* Lista de posts */
+#navbarNav a {
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+
+#navbarNav a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+  z-index: -1;
+}
+
+#navbarNav a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+
 .post-resume {
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
 }
 
-/* Lista de navegación */
 .lista {
   display: flex;
   align-items: center;
@@ -235,12 +252,6 @@ a#blog-title:focus::before {
   transition: opacity 0.2s ease;
 }
 
-.lista li a:hover,
-.lista li a:focus {
-  opacity: 0.7;
-}
-
-/* Post styles */
 .post {
   padding: 3rem 0 6rem;
   width: 100%;
@@ -273,9 +284,15 @@ p {
   text-align: left;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .title-post-resume {
   margin-top: 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   a {
     color: var(--color-text);
     text-decoration: none;
@@ -301,7 +318,6 @@ code {
   word-wrap: break-word;
 }
 
-/* Blockquotes */
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #F39237;
@@ -314,7 +330,6 @@ blockquote p {
   display: inline;
 }
 
-/* Code blocks */
 .highlight pre {
   border: 1px solid var(--color-text);
   border-radius: 0.625rem;
@@ -336,7 +351,6 @@ blockquote p {
   padding: 0.25rem;
 }
 
-/* Back button */
 .back {
   margin-top: 2.8125rem;
   font-size: 1.875rem;
@@ -360,9 +374,11 @@ ul {
   list-style: none;
 }
 
+.archive-group th {
+  text-align: start !important;
+  padding-right: 0.5rem;
+}
 
-
-/* Footer */
 #site-footer {
   position: absolute;
   bottom: 0;
@@ -396,13 +412,6 @@ svg {
   float: right;
 }
 
-// .float-end:hover {
-//   .chevron:hover::before{
-//     background-color: var(--color-primary);
-//     color: white;
-//   }
-// }
-
 .chevron::before {
   border-style: solid;
   border-width: 0.15em 0.15em 0 0;
@@ -416,7 +425,6 @@ svg {
   color: var(--color-primary);
 }
 
-/* Utilities */
 .divider {
   background: var(--color-primary);
   height: 4px;
@@ -457,7 +465,6 @@ svg {
   padding: 0.2em;
 }
 
-/* Media Queries */
 @media screen and (max-width: 949px) {
   .navbar-toggler {
     display: block;
