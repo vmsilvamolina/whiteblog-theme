@@ -16,7 +16,7 @@
 *,
 *::before,
 *::after {
-  // box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -64,15 +64,15 @@ main {
 
 .navbar-links > * {
   margin-right: 10px;
-
-  ul li {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    font-size: 1rem;
-  }
 }
 
-.navbarBrand {
+.navbar-links ul li {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.navbar-brand {
   padding: 0.3125rem 0;
   margin-right: 1rem;
   font-size: 1.25rem;
@@ -205,13 +205,13 @@ a#blog-title:focus::before {
   transform-origin: 10% 90%;
 }
 
-#navbarNav a {
+#navbar-nav a {
   position: relative;
   text-decoration: none;
   z-index: 1;
 }
 
-#navbarNav a::before {
+#navbar-nav a::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -225,7 +225,7 @@ a#blog-title:focus::before {
   z-index: -1;
 }
 
-#navbarNav a:hover::before {
+#navbar-nav a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -236,17 +236,26 @@ a#blog-title:focus::before {
   padding-bottom: 0.5rem;
 }
 
-.lista {
+.post-resume-title {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}
+
+.nav-list {
   display: flex;
   align-items: center;
   z-index: 1;
 }
 
-.lista li {
+.nav-list li {
   list-style: none;
 }
 
-.lista li a {
+.nav-list li a {
   color: var(--color-text);
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -288,15 +297,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.title-post-resume {
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
-  a {
-    color: var(--color-text);
-    text-decoration: none;
-  }
 }
 
 .text-secondary {
@@ -470,7 +470,7 @@ svg {
     display: block;
   }
 
-  .lista {
+  .nav-list {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -481,11 +481,11 @@ svg {
     padding: 1rem 0;
   }
 
-  .lista.active {
+  .nav-list.active {
     display: flex;
   }
 
-  .lista li {
+  .nav-list li {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
@@ -508,7 +508,7 @@ svg {
     display: none;
   }
 
-  .lista {
+  .nav-list {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
