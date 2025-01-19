@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "whiteblog-theme"
-  spec.version       = "0.0.18"
+  spec.version       = "0.0.19"
   spec.authors       = ["Victor Silva"]
   spec.email         = ["vmsilvamolina@gmail.com"]
   spec.summary       = %q{Minimal, wide and white blogging theme for Jekyll}
