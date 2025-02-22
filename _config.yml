@@ -25,6 +25,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-feed
 
 addons:
   back_to_top            : true                  # true (default), false
