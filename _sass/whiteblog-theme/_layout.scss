@@ -63,14 +63,12 @@ aside {
 }
 
 .container {
-  max-width: 95%;
-  margin: 0 auto;
+  padding-left: 1rem;
 }
 
 main {
   padding-bottom: 4rem;
-  // flex: 1;
-  // min-width: 0;
+  min-width: 70%;
 }
 
 .navbar {
@@ -287,8 +285,12 @@ a#blog-title:focus::before {
 }
 
 .post {
-  padding: 3rem 0 6rem;
+  padding: 0rem 0 6rem;
   width: 100%;
+}
+
+#post {
+  padding-top: 3rem;
 }
 
 .notice {
@@ -306,9 +308,9 @@ a#blog-title:focus::before {
 }
 
 #posts-navigation {
-  padding-bottom: 1.5rem;
+  padding-bottom: .5rem;
   bottom: 0;
-  min-height: 6rem;
+  min-height: 4rem;
 }
 
 p {
@@ -317,7 +319,6 @@ p {
 
 .row {
   display: grid;
-  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
   font-size: 20px;
   * {
