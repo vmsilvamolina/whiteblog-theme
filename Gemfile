@@ -11,3 +11,4 @@ gem 'sass-embedded', '~> 1.75'
 gem "jekyll-gist"
 gem "imgkit"
 gem "wkhtmltoimage-binary"
+gem "jekyll-paginate"

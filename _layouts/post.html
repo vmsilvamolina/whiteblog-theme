@@ -6,12 +6,17 @@ layout: default
   <div id="posts-navigation" class="row">
     <div class="previous">
       {% if page.previous.url %}
-        <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+        <a href="{{page.previous.url}}" class="nav-btn prev-btn" title="{{page.previous.title}}">
+          <span class="chevron left"></span>
+
+        </a>
       {% endif %}
     </div>
     <div class="next">  
       {% if page.next.url %}
-        <a href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+        <a href="{{page.next.url}}" class="nav-btn next-btn" title="{{page.next.title}}">
+          <span class="chevron right"></span>
+        </a>
       {% endif %}
     </div>
   </div>
