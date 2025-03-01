@@ -50,6 +50,12 @@ layout: default
     </div>
 
     <div class="row">
+      {% if site.comments.provider%}
+        {% include comments.html %}
+      {% endif %}
+    </div>
+    
+    <div class="row">
       {% if site.addons.share_post %}
         {% include sharepost.html %}
       {% endif %}

@@ -57,6 +57,13 @@ aside {
   margin-top: 5rem;
 }
 
+.useful-links {
+  padding: 1rem 1rem 0 0;
+  span {
+    display: flex;
+  }
+}
+
 .container-nav {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -374,7 +381,6 @@ blockquote {
   align-items: center;
 }
 
-
 blockquote p {
   margin-bottom: 0;
 }
@@ -659,6 +665,27 @@ svg {
     text-align: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid #ccc;
+  }
+
+  .main-wrapper {
+    display: block;
+  }
+
+  aside {
+    display: flex;
+    border-right: none;
+    margin-top: 1rem;
+    .author-info {
+      width: 30%;
+    }
+    .useful-links {
+      width: 70%;
+    }
+  }
+
+  .about-image-small {
+    width: 70px;
+    height: 70px;
   }
   
   .container {
