@@ -1,6 +1,5 @@
 # Site Settings
 title: whiteblog-theme
-author: Victor Silva
 
 
 # Site Author
@@ -16,10 +15,10 @@ author:
   github           : "vmsilvamolina"
   gitlab           :
   instagram        :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  stackoverflow    : "4905856/victor-silva" # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)          :
-  x.com            : "vmsilvamolina"
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  linkedin         : "vmsilvamolina" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  stackoverflow    : "4905856/victor-silva" # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  x                : "vmsilvamolina"
+  youtube          : # "https://youtube.com/c/xxxxx"
 
 plugins:
   - jekyll-redirect-from
@@ -55,7 +54,7 @@ comments:
 
 analytics:
   google:
-    tracking_id          : "G-GDR66JH5FZ"        # false (default), "G-XXXXXXXXXX"
+    tracking_id          :                       # false (default), "G-XXXXXXXXXX"
 
 # Outputting
 permalink: /:title/ #/:categories/:title/
