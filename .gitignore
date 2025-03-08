@@ -6,3 +6,5 @@ Gemfile.lock
 .vscode
 
 .DS_Store
+
+assets/images/previews/*
