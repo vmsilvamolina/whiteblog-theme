@@ -48,9 +48,12 @@ exclude:
   - whiteblogtheme.gemspec
 
 comments:
-  provider               : "disqus"              # false (default), "disqus"
+  provider               : false                 # false (default), "disqus"
   disqus:
-    shortname            : "vmsilvamolina"
+    shortname            : ""                    # your disqus shortname
+  cusdis:
+    #    appId                : "15a179b2-f040-4113-9469-7c6bc0569e42"
+    appId                : ""
 
 analytics:
   google:
