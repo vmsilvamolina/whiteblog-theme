@@ -8,3 +8,4 @@ Gemfile.lock
 .DS_Store
 
 assets/images/previews/*
+_posts/*

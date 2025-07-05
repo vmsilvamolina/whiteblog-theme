@@ -15,6 +15,21 @@
   --transition-default: all 0.3s ease-in-out;
 }
 
+[data-theme="dark"] {
+  --color-bg: #231633;
+  --color-accent: #44318D;
+  --color-primary: #C266E8;
+  --color-text: #E8E8E8;
+  --color-dark: #CCCCCC;
+  --color-highlight: #D83F87;
+  --color-code: #FF6B9D;
+  --color-code-bg: #2a2a2a;
+  --color-notice: #4A3B5C;
+  --font-main: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --container-width: 90%;
+  --transition-default: all 0.3s ease-in-out;
+}
+
 *,
 *::before,
 *::after {
@@ -118,6 +133,57 @@ main {
   color: var(--color-text);
   text-decoration: none;
   white-space: nowrap;
+}
+
+#theme-toggle {
+  z-index: 1000;
+  background: var(--color-bg);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-default);
+  color: var(--color-text);
+}
+
+#theme-toggle:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  transform: scale(1.1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.bounce-link {
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-primary) !important;
+  &::after {
+    content: "";
+    background: #ec407a40;
+    position: absolute;
+    left: 10px;
+    bottom: -5px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    // z-index: -1;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+  &:hover:after {
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .link {
@@ -287,7 +353,8 @@ a#blog-title:focus::before {
 .nav-list {
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
+  padding-bottom: 0rem;
 }
 
 .nav-list li {
@@ -325,13 +392,86 @@ a#blog-title:focus::before {
   min-height: 4rem;
 }
 
+img {
+  max-width: 85%;
+  height: auto;
+}
+
+figure {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+figure img,
+figure iframe,
+figure .fluid-width-video-wrapper {
+  margin-bottom: 1em
+}
+
+figure img {
+  width: 100%;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out
+}
+
+figure>a {
+  display: block
+}
+
+@media (min-width: 37.5em) {
+  figure.half > a,
+  figure.half > img {
+    width: calc(50% - 0.5em)
+  }
+}
+
+figure.half figcaption {
+  width: 100%
+}
+
+@media (min-width: 37.5em) {
+  figure.third > a,
+  figure.third > img {
+    width: calc(33.3333% - 0.5em);
+  }
+}
+
+figure.third figcaption {
+  width: 100%
+}
+
+figcaption {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+
+figcaption a {
+  -webkit-transition:all 0.2s ease-in-out;
+  transition:all 0.2s ease-in-out
+}
+
 p {
   margin-bottom: 1rem;
 }
 
-.row {
+.row-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-size: 20px;
+
+  * {
+    color: var(--color-dark);
+  }
+}
+
+.row {
   font-size: 20px;
 
   * {
@@ -368,6 +508,7 @@ p {
 
 code {
   font-size: .9em;
+  font-family: 'Fira Code', monospace;
   color: var(--color-code);
   word-wrap: break-word;
 }
@@ -379,7 +520,7 @@ blockquote {
   border-bottom: 1px solid #F39237;
   font-style: italic;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   width: 85%;
   margin: 2rem auto;
   height: 80px;
@@ -391,20 +532,25 @@ blockquote p {
   margin-bottom: 0;
 }
 
+.highlight {
+  margin: 1.3rem 0;
+}
+
 .highlight pre {
   border-radius: 0.25rem;
   padding: 1rem 1rem;
-  margin: 0.75rem 0;
+  // margin: 0.75rem 0;
   overflow: auto;
   white-space: pre-wrap;
-  background-color: var(--color-code-bg) !important;
+  background-color: #fafafa !important;
+  min-width: 100%;
 }
 
 .highlight pre button {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  color: var(--color-bg);
+  // color: var(--color-bg);
   background: none;
   border: none;
   cursor: pointer;
@@ -413,6 +559,7 @@ blockquote p {
 
 ul {
   list-style: none;
+  padding-bottom: 1rem;
 }
 
 .archive-group th {
@@ -650,6 +797,7 @@ svg {
   font-size: 16px;
   line-height: 30px;
   padding: 0.2em;
+  font-family: var(--font-main);
 }
 
 @media screen and (max-width: 949px) {
@@ -677,6 +825,9 @@ svg {
     text-align: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid #ccc;
+    a {
+      display: block;
+    }
   }
 
   .main-wrapper {
