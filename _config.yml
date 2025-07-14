@@ -5,20 +5,15 @@ title: whiteblog-theme
 # Site Author
 author:
   name             : "Victor Silva"
-  avatar           : "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.jpg"
   bio              : 
   location         : "Montevideo, Uruguay"
-  email            : "info@victorsilva.com.uy"
   uri              :
-  bitbucket        :
-  codepen          :
-  github           : "vmsilvamolina"
-  gitlab           :
-  instagram        :
-  linkedin         : "vmsilvamolina" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  stackoverflow    : "4905856/victor-silva" # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   x                : "vmsilvamolina"
-  youtube          : # "https://youtube.com/c/xxxxx"
+  linkedin         : "vmsilvamolina" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  email            : "info@victorsilva.com.uy"
+  github           : "vmsilvamolina"
+  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
 
 plugins:
   - jekyll-redirect-from
@@ -52,8 +47,7 @@ comments:
   disqus:
     shortname            : ""                    # your disqus shortname
   cusdis:
-    #    appId                : "15a179b2-f040-4113-9469-7c6bc0569e42"
-    appId                : ""
+    appId                : "15a179b2-f040-4113-9469-7c6bc0569e42"
 
 analytics:
   google:
