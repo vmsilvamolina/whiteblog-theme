@@ -6,6 +6,7 @@ title: whiteblog-theme
 author:
   name             : "Victor Silva"
   avatar           : "/assets/images/avatar.jpg"
+  about-photo      : "/assets/images/bio-photo.jpg"
   bio              : 
   location         : "Montevideo, Uruguay"
   uri              :
@@ -24,7 +25,7 @@ plugins:
 addons:
   back_to_top            : true                  # true (default), false
   share_post             : true                  # true (default), false
-
+  old_post_warning       : false                 # true, false (default)
 
 header_pages:
   # - _pages/contact.md
