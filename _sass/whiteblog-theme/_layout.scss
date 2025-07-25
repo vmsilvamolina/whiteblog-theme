@@ -16,7 +16,7 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #231633;
+  --color-bg: rgb(37,36,47);
   --color-accent: #44318D;
   --color-primary: #C266E8;
   --color-text: #E8E8E8;
@@ -161,8 +161,10 @@ main {
   transform: scale(0.95);
 }
 
-.bounce-link {
+#content a:not( .pagination a):not( .post-resume-title a),
+.archive-group table a {
   font-weight: bold;
+  color: var(--color-text);
   text-decoration: none;
   background-image: linear-gradient(var(--color-bg) 50%, var(--color-accent) 50%);
 	background-size: auto 175%;
@@ -554,6 +556,7 @@ ul {
 .archive-group th {
   text-align: start !important;
   padding-right: 0.5rem;
+  min-width: 150px;
 }
 
 #site-footer {
