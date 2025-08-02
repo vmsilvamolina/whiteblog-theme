@@ -8,7 +8,7 @@
   --color-dark: #313638;
   --color-highlight: #25E498;
   --color-code: #D63384;
-  --color-code-bg: #282a36;
+  --color-code-bg: #181825; //#313a46;
   --color-notice: #CFBAE1;
   --font-main: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --container-width: 90%;
@@ -16,14 +16,14 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: rgb(37,36,47);
+  --color-bg: #1e1e2e;
   --color-accent: #44318D;
   --color-primary: #C266E8;
   --color-text: #E8E8E8;
   --color-dark: #CCCCCC;
   --color-highlight: #D83F87;
   --color-code: #FF6B9D;
-  --color-code-bg: #282a36;
+  --color-code-bg: #181825; //#313a46;
   --color-notice: #4A3B5C;
   --font-main: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --container-width: 90%;
