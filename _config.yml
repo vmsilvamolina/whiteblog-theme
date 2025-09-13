@@ -31,6 +31,9 @@ addons:
   back_to_top            : true                  # true (default), false
   share_post             : true                  # true (default), false
   old_post_warning       : false                 # true, false (default)
+  related_posts:
+    enabled              : true                  # true (default), false
+    limit                : 3                     # max related posts to show
   buymeacoffee:
     id                   : ""                     # your buymeacoffee username, empty disables the widget
     description          : "Support me on Buy me a coffee!"

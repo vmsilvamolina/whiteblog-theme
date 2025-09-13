@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- Related posts section at the end of each post, matched by shared category with a fallback to the most recent posts (`addons.related_posts` in `_config.yml`)
+
 ## [0.5.0] - 2026-08-23
 
 ### Added
