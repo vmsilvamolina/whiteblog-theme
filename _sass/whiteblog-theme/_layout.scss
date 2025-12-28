@@ -543,6 +543,17 @@ blockquote p {
   padding: 0.25rem;
 }
 
+.post .text-justify#content ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post .text-justify#content ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
 ul {
   list-style: none;
   padding-bottom: 1rem;

@@ -18,4 +18,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor imper
 
 > Blockquote test
 
+- Small
+- List
+
+And:
+
+1. Numbered
+2. List
+
 More text...
