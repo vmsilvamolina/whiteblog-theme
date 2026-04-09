@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2026-04-09
+
+### Added
+- JSON-LD `BlogPosting` schema in post layout for structured data
+- Complete Open Graph tags: `og:type`, `og:title`, `og:description`, `og:url`, `og:article:published_time`, `og:article:author`
+- Twitter card tags: `twitter:title`, `twitter:description`
+- OG image fallback to author avatar when no post preview exists
+- `robots.txt` with sitemap URL
+
 ## [0.1.7] - 2026-04-08
 
 ### Fixed
