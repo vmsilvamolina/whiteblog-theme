@@ -6,6 +6,7 @@ Gemfile.lock
 .vscode
 
 .DS_Store
+CLAUDE.md
 
 .jekyll-cache/*
 assets/images/previews/*

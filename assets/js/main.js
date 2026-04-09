@@ -28,19 +28,23 @@ blocks.forEach((block) => {
 async function copyCode(block, button) {
   let code = block.querySelector("code");
   let text = code.innerText;
-  await navigator.clipboard.writeText(text);
-  
-  // visual feedback that task is completed
-  button.innerHTML = checkmarkSVG; // Checkmark symbol
-  button.style.backgroundColor = "green";
-  button.style.color = "white";
-  button.style.borderRadius = "4px";
 
-  setTimeout(() => {
-    button.innerHTML = copyButtonSVG;
-    button.style.backgroundColor = "";
-    button.style.color = "";
-  }, 1000);
+  try {
+    await navigator.clipboard.writeText(text);
+    button.innerHTML = checkmarkSVG;
+    button.style.backgroundColor = "green";
+    button.style.color = "white";
+    button.style.borderRadius = "4px";
+
+    setTimeout(() => {
+      button.innerHTML = copyButtonSVG;
+      button.style.backgroundColor = "";
+      button.style.color = "";
+    }, 1000);
+  } catch (err) {
+    button.innerHTML = "Error";
+    setTimeout(() => { button.innerHTML = copyButtonSVG; }, 1500);
+  }
 }
 
 let mainNav = document.getElementById("js-menu");

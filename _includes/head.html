@@ -4,16 +4,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="twitter:card"
-    content="summary_large_image">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+  {% if page.description %}
+    <meta name="description" content="{{ page.description | escape }}">
+  {% elsif site.description %}
+    <meta name="description" content="{{ site.description | escape }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image"
-    content="{{ site.url }}/assets/images/previews/{{ page.slug }}.png">
+    content="{{ site.url }}/assets/images/previews/{{ page.slug | default: 'default' }}.png">
   <meta property="og:image"
-    content="{{ site.url }}/assets/images/previews/{{ page.slug }}.png">
+    content="{{ site.url }}/assets/images/previews/{{ page.slug | default: 'default' }}.png">
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | relative_url }}">
 
   {% if page.head_inline %}
     {{ page.head_inline }}
