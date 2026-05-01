@@ -482,7 +482,7 @@ p {
 .text-secondary {
   min-height: 28px;
   font-weight: 700;
-  margin-bottom: 8px !important;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -529,7 +529,7 @@ blockquote p {
   border-radius: 0.25rem;
   padding: 1rem 1rem;
   overflow: auto;
-  background-color: var(--color-code-bg) !important;
+  background-color: var(--color-code-bg);
   white-space: pre-wrap;
   min-width: 100%;
 }
@@ -567,7 +567,7 @@ ul {
 }
 
 .archive-group th {
-  text-align: start !important;
+  text-align: start;
   padding-right: 0.5rem;
   min-width: 150px;
 }
@@ -598,7 +598,7 @@ svg {
 }
 
 .social-networks-icons {
-  vertical-align: unset !important
+  vertical-align: unset;
 }
 
 .float-abajo {
