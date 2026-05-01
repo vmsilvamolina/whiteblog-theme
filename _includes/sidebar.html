@@ -1,7 +1,10 @@
 <aside>
     <section class="author-info">
         <!-- <h2>Sobre el Autor</h2> -->
-        <img class="about-image-small" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+        <picture>
+          <source srcset="{{ site.author.avatar | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}" type="image/webp">
+          <img class="about-image-small" src="{{ site.author.avatar }}" alt="{{ site.author.name }}" loading="lazy">
+        </picture>
         <h2>{{ site.author.name }}</h2>
     </section>
     <section class="useful-links">

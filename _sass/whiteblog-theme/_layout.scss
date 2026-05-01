@@ -10,6 +10,7 @@
   --color-code: #D63384;
   --color-code-bg: #282a36;
   --color-notice: #CFBAE1;
+  --color-success: #28a745;
   --font-main: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --container-width: 90%;
   --transition-default: all 0.3s ease-in-out;
@@ -541,6 +542,12 @@ blockquote p {
   border: none;
   cursor: pointer;
   padding: 0.25rem;
+}
+
+.highlight pre button.copy-success {
+  background-color: var(--color-success);
+  color: white;
+  border-radius: 4px;
 }
 
 .post .text-justify#content ol {

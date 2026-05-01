@@ -32,14 +32,11 @@ async function copyCode(block, button) {
   try {
     await navigator.clipboard.writeText(text);
     button.innerHTML = checkmarkSVG;
-    button.style.backgroundColor = "green";
-    button.style.color = "white";
-    button.style.borderRadius = "4px";
+    button.classList.add("copy-success");
 
     setTimeout(() => {
       button.innerHTML = copyButtonSVG;
-      button.style.backgroundColor = "";
-      button.style.color = "";
+      button.classList.remove("copy-success");
     }, 1000);
   } catch (err) {
     button.innerHTML = "Error";
