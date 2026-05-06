@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-05-06
+
+### Added
+- Giscus comments provider support via `comments.provider: giscus` in `_config.yml`
+
+### Fixed
+- Cusdis guard condition to prevent rendering when provider is not set
+
+### Performance
+- Sidebar avatar served as WebP with `loading="lazy"`
+- Copy-success CSS class extracted from inline JS
+
+### Style
+- Removed `!important` from non-accessibility CSS rules
+
 ## [0.2.0] - 2026-04-09
 
 ### Added
