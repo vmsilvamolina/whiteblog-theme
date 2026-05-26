@@ -100,10 +100,11 @@ layout: default
         {% include backtotop.html %}
       {% endif %}
 
-      {% if site.comments.provider%}
-        {% if site.comments.provider == "disqus" %}
-          {% include comments-providers/disqus.html %}
-        {% endif %}
+      {% if site.comments.provider %}
+        {% case site.comments.provider %}
+          {% when "disqus" %}
+            {% include comments-providers/disqus.html %}
+        {% endcase %}
       {% endif %}
     </div>
 
