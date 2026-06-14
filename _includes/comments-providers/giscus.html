@@ -8,10 +8,38 @@
   data-strict="0"
   data-reactions-enabled="{{ site.comments.giscus.reactions_enabled | default: '1' }}"
   data-emit-metadata="0"
-  data-input-position="{{ site.comments.giscus.input_position | default: 'top' }}"
-  data-theme="{{ site.comments.giscus.theme | default: 'preferred_color_scheme' }}"
+  data-input-position="{{ site.comments.giscus.input_position | default: 'bottom' }}"
+  data-theme="preferred_color_scheme"
   data-lang="{{ site.comments.giscus.lang | default: 'en' }}"
   crossorigin="anonymous"
   async>
+</script>
+<script>
+(function() {
+  function syncGiscusTheme() {
+    var theme = document.documentElement.getAttribute('data-theme') || 'light';
+    var iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: theme } } },
+        'https://giscus.app'
+      );
+    }
+  }
+
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://giscus.app') return;
+    if (event.data && event.data.giscus && event.data.giscus.resizeHeight) {
+      syncGiscusTheme();
+    }
+  });
+
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName === 'data-theme') syncGiscusTheme();
+    });
+  });
+  observer.observe(document.documentElement, { attributes: true });
+})();
 </script>
 {% endif %}
