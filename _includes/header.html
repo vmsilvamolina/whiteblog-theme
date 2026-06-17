@@ -2,13 +2,13 @@
   <div class="container-nav">
     <a id="blog-title" class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <div class="navbar-links">
-      <span class="nav-toggle" id="js-nav-toggle">
-        <svg viewBox="0 0 100 80" width="20" height="20" fill="currentColor">
+      <button type="button" class="nav-toggle navbar-toggler" id="js-nav-toggle" aria-expanded="false" aria-controls="js-menu" aria-label="Abrir menú de navegación">
+        <svg viewBox="0 0 100 80" width="20" height="20" fill="currentColor" aria-hidden="true">
           <rect width="100" height="18" rx="8"></rect>
           <rect y="30" width="100" height="18" rx="8"></rect>
           <rect y="60" width="100" height="18" rx="8"></rect>
         </svg>
-      </span>
+      </button>
       <div id="navbar-nav">
         <ul class="nav-list" id="js-menu">
           {% assign default_paths = site.pages | map: "path" %}

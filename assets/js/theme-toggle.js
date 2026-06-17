@@ -63,7 +63,4 @@
   } else {
     init();
   }
-  
-  const initialTheme = getThemePreference();
-  document.documentElement.setAttribute('data-theme', initialTheme);
 })();

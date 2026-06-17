@@ -27,16 +27,15 @@ layout: default
     <div id="navigation-space" class="row-grid">
       <div class="previous">
         {% if page.previous.url %}
-          <a href="{{page.previous.url}}" class="nav-btn prev-btn" title="{{page.previous.title}}">
-            <span class="chevron left"></span>
-
+          <a href="{{page.previous.url}}" class="nav-btn prev-btn" title="{{page.previous.title}}" aria-label="Post anterior: {{page.previous.title}}">
+            <span class="chevron left" aria-hidden="true"></span>
           </a>
         {% endif %}
       </div>
-      <div class="next">  
+      <div class="next">
         {% if page.next.url %}
-          <a href="{{page.next.url}}" class="nav-btn next-btn" title="{{page.next.title}}">
-            <span class="chevron right"></span>
+          <a href="{{page.next.url}}" class="nav-btn next-btn" title="{{page.next.title}}" aria-label="Siguiente post: {{page.next.title}}">
+            <span class="chevron right" aria-hidden="true"></span>
           </a>
         {% endif %}
       </div>
@@ -51,6 +50,9 @@ layout: default
     {% assign date_format = site.theme.date_format | default: "%b %-d, %Y" %}
     {{ page.date | date: date_format }}
   </time>
+  {% assign words = content | number_of_words %}
+  {% assign reading_minutes = words | divided_by: 200 | plus: 1 %}
+  <span aria-label="{{ reading_minutes }} minutos de lectura">{{ reading_minutes }} min read</span>
   {% if site.addons.old_post_warning %}
     {% assign current_timestamp = 'now' | date: '%s' | plus: 0 %}
     {% assign one_year_ago = current_timestamp | minus: 31536000 %}

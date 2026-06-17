@@ -22,6 +22,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
 
 addons:
   back_to_top            : true                  # true (default), false

@@ -14,9 +14,8 @@ blocks.forEach((block) => {
   if (navigator.clipboard) {
     let button = document.createElement("button");
     button.innerHTML = copyButtonSVG;
-    button.style.position = "absolute";
-    button.style.top = "5px";
-    button.style.right = "5px";
+    button.setAttribute("aria-label", "Copiar código");
+    button.classList.add("copy-btn");
     block.style.position = "relative";
     block.appendChild(button);
     button.addEventListener("click", async () => {
@@ -32,10 +31,12 @@ async function copyCode(block, button) {
   try {
     await navigator.clipboard.writeText(text);
     button.innerHTML = checkmarkSVG;
+    button.setAttribute("aria-label", "Copiado");
     button.classList.add("copy-success");
 
     setTimeout(() => {
       button.innerHTML = copyButtonSVG;
+      button.setAttribute("aria-label", "Copiar código");
       button.classList.remove("copy-success");
     }, 1000);
   } catch (err) {
@@ -47,6 +48,9 @@ async function copyCode(block, button) {
 let mainNav = document.getElementById("js-menu");
 let navBarToggle = document.getElementById("js-nav-toggle");
 
-navBarToggle.addEventListener("click", function() {
-  mainNav.classList.toggle("active");
-});
+if (navBarToggle) {
+  navBarToggle.addEventListener("click", function() {
+    const isExpanded = mainNav.classList.toggle("active");
+    navBarToggle.setAttribute("aria-expanded", isExpanded);
+  });
+}
