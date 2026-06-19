@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-06-18
+
+### Fixed
+- Command injection in `previews.rb` — replaced backtick shell interpolation with `system()` array args and `Dir.tmpdir`
+- Analytics condition — GA4 no longer loads when `tracking_id` is empty
+- Malformed `mailto:` link in sidebar (stray space after colon)
+- Invalid Liquid syntax in `allposts.html` date format assignment
+- Category page: invalid `id` with literal `#`, deprecated `<a name>`, inline hardcoded color, skipped heading levels (`h5` → `h2`)
+- Theme toggle icon off-center — removed manual `padding-bottom` hack, now uses `display: flex`
+
+### Added
+- Skip to main content link (WCAG 2.4.1)
+- `sr-only` utility class for screen-reader-only text
+- `aria-label` on back-to-top, prev/next post navigation and search results container
+- `<label>` for search input (WCAG 1.3.1)
+- Accessible pagination — disabled items replaced with non-focusable `<span>`, `aria-current="page"` on active item
+- `aria-hidden="true"` on all decorative SVGs in sidebar and share buttons
+- `rel="noreferrer"` on all external `target="_blank"` links
+- `display: flex` on theme toggle button for proper icon centering
+- `jekyll-sitemap` plugin — `sitemap.xml` now generated on build
+
+### Changed
+- Post listing headings changed from `h1` to `h2` (single `h1` per page, injected as `sr-only`)
+- Primary color adjusted for WCAG AA contrast (light: `#923DB5`, dark: `#CE80EF`)
+- Inline code color adjusted for WCAG AA contrast (light: `#C01979`)
+- Search script now uses `defer` and `relative_url`
+
 ## [0.3.2] - 2026-06-14
 
 ### Added
