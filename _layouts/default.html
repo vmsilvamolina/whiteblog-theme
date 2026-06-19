@@ -6,11 +6,12 @@
 {% include head.html %}
 
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   {% include header.html %}
 
   <div class="main-wrapper">
-    {% include sidebar.html %}    
-    <main>
+    {% include sidebar.html %}
+    <main id="main-content">
       {{ content }}
     </main>
   </div>

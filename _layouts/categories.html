@@ -16,10 +16,8 @@ title: Categories
       {% for category in site.categories %}
       <div class="archive-group">
         {% capture category_name %}{{ category | first }}{% endcapture %}
-        <div id="#{{ category_name | slugize }}"></div>
-        <p></p>
-        <h5 style='color:white !important;'><a class="badge badge-{{ category_name }}">{{ category_name }}</a></h5>
-        <a name="{{ category_name | slugize }}"></a>
+        <div id="{{ category_name | slugize }}"></div>
+        <h2><a class="badge badge-{{ category_name }}">{{ category_name }}</a></h2>
         <table>
         {% for post in site.categories[category_name] %}
           <tr>

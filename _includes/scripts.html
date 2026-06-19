@@ -9,6 +9,6 @@
 <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
-{% if site.analytics %}
+{% if site.analytics.google.tracking_id and site.analytics.google.tracking_id != "" %}
   {% include /analytics/googleAnalytics.html %}
 {% endif %}

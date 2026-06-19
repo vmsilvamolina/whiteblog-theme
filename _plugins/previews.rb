@@ -16,7 +16,8 @@ module Previews
       next if slug.nil? || slug.empty?
       
       # Define the file paths
-      tmp_path = "/tmp/#{slug}.png"
+      require 'tmpdir'
+      tmp_path = File.join(Dir.tmpdir, "whiteblog-preview-#{slug}-#{Process.pid}.png")
       final_path = File.join(preview_dir, "#{slug}.png")
       
       # Skip if it already exists
@@ -78,7 +79,7 @@ module Previews
           # Optimize if pngquant is available
           if system("which pngquant > /dev/null 2>&1")
             puts "Optimizing image with pngquant"
-            `pngquant #{final_path} -o #{final_path} -f`
+            system('pngquant', final_path, '-o', final_path, '-f')
           else
             puts "pngquant is not installed, skipping optimization"
           end

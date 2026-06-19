@@ -17,7 +17,7 @@ layout: page
     <table>
   {% endif %}
 
-  {% assign date_format = default: "%b %-d" %}
+  {% assign date_format = "%b %-d" %}
   <tr>
     <td><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
     <td>|</td>
