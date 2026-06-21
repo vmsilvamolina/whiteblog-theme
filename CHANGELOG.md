@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2026-06-21
+
+### Fixed
+- Disqus script not loading after comments consolidation into `comments.html`
+
+### Added
+- Auto-generated meta description, OG and Twitter description from post excerpt
+- JSON-LD `description` field now uses post excerpt as primary source
+
 ## [0.4.0] - 2026-06-18
 
 ### Fixed
