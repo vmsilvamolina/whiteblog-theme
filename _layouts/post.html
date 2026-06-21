@@ -9,7 +9,7 @@ layout: default
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
   "url": "{{ page.url | absolute_url }}",
-  "description": {{ page.description | default: site.description | jsonify }},
+  "description": {{ page.excerpt | strip_html | truncate: 200 | default: page.description | default: site.description | jsonify }},
   "author": {
     "@type": "Person",
     "name": {{ site.author.name | jsonify }},
@@ -102,12 +102,6 @@ layout: default
         {% include backtotop.html %}
       {% endif %}
 
-      {% if site.comments.provider %}
-        {% case site.comments.provider %}
-          {% when "disqus" %}
-            {% include comments-providers/disqus.html %}
-        {% endcase %}
-      {% endif %}
     </div>
 
   </article>
