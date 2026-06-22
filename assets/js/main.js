@@ -6,23 +6,23 @@ const checkmarkSVG = `Copied <svg xmlns="http://www.w3.org/2000/svg" width="16" 
   <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
 </svg>`;
 
-// use a class selector if available
-let blocks = document.querySelectorAll("pre");
-
-blocks.forEach((block) => {
-  // only add button if browser supports Clipboard API
-  if (navigator.clipboard) {
-    let button = document.createElement("button");
+if (navigator.clipboard) {
+  document.querySelectorAll("pre").forEach((block) => {
+    const button = document.createElement("button");
     button.innerHTML = copyButtonSVG;
     button.setAttribute("aria-label", "Copiar código");
     button.classList.add("copy-btn");
     block.style.position = "relative";
     block.appendChild(button);
-    button.addEventListener("click", async () => {
-      await copyCode(block, button);
-    });
-  }
-});
+  });
+
+  document.addEventListener("click", async (e) => {
+    const button = e.target.closest(".copy-btn");
+    if (!button) return;
+    const block = button.closest("pre");
+    if (block) await copyCode(block, button);
+  });
+}
 
 async function copyCode(block, button) {
   let code = block.querySelector("code");
@@ -54,3 +54,13 @@ if (navBarToggle) {
     navBarToggle.setAttribute("aria-expanded", isExpanded);
   });
 }
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
+    mainNav.classList.remove("active");
+    if (navBarToggle) {
+      navBarToggle.setAttribute("aria-expanded", "false");
+      navBarToggle.focus();
+    }
+  }
+});

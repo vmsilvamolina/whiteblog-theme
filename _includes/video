@@ -3,8 +3,8 @@
 
 <div>
 {% if video_provider == "vimeo" %}
-  <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  <iframe src="https://player.vimeo.com/video/{{ video_id }}" title="Vimeo video player" frameborder="0" loading="lazy" allowfullscreen></iframe>
 {% elsif video_provider == "youtube" %}
-  <iframe src="https://www.youtube.com/embed/{{ video_id }}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/{{ video_id }}" title="YouTube video player" width="560" height="315" frameborder="0" loading="lazy" allowfullscreen></iframe>
 {% endif %}
 </div>
