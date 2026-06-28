@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.2] - 2026-07-09
+
+### Added
+- Lazy loading plugin for images and videos (`_plugins/lazy_images.rb`)
+- Escape key closes mobile nav, returns focus to toggle
+- Event delegation for copy-to-clipboard buttons (single `document` listener)
+
+### Fixed
+- Previews: Google Fonts not loading — moved to `<link>` in generated HTML + `javascript-delay` for external resources
+- Previews: unescaped HTML in title/author — `CGI.escapeHTML`
+- Previews: incorrect `pngquant` flags — corrected to `--force --ext .png`
+- Previews: temp file not cleaned up — `ensure` block guarantees `FileUtils.rm_f`
+
 ## [0.4.1] - 2026-06-21
 
 ### Fixed
