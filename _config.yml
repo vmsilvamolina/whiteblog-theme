@@ -24,6 +24,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+sass:
+  style: compressed
+
 addons:
   back_to_top            : true                  # true (default), false
   share_post             : true                  # true (default), false
