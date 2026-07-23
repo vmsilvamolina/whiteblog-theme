@@ -21,13 +21,13 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: rgb(37,36,47);
+  --color-bg: #1a1a2e;
   --color-accent: #44318D;
   --color-primary: #CE80EF;
   --color-text: #E8E8E8;
   --color-dark: #CCCCCC;
   --color-highlight: #D83F87;
-  --color-code: #FF6B9D;
+  --color-code: #e0aaff;
   --color-code-bg: #282a36;
   --color-notice: #4A3B5C;
   --color-blockquote: #F39237;
@@ -639,6 +639,26 @@ svg {
 
 .social-networks-icons {
   vertical-align: unset;
+}
+
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.ascii-404 {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  color: var(--color-code);
+  white-space: pre;
+  text-align: left;
+  overflow-x: auto;
+  max-width: 100%;
+  line-height: 1.15;
 }
 
 .float-abajo {
