@@ -12,3 +12,7 @@
 {% if site.analytics.google.tracking_id and site.analytics.google.tracking_id != "" %}
   {% include /analytics/googleAnalytics.html %}
 {% endif %}
+
+{% if site.addons.buymeacoffee.id and site.addons.buymeacoffee.id != "" %}
+  {% include buymeacoffee.html %}
+{% endif %}

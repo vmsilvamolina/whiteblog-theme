@@ -31,6 +31,14 @@ addons:
   back_to_top            : true                  # true (default), false
   share_post             : true                  # true (default), false
   old_post_warning       : false                 # true, false (default)
+  buymeacoffee:
+    id                   : "vmsilvamolina"                    # your buymeacoffee username, empty disables the widget
+    description          : "Support me on Buy me a coffee!"
+    message              : ""
+    color                : ""                    # empty (default) uses the theme's --color-accent, or set a custom hex
+    position             : "Right"                # Left, Right
+    x_margin             : "18"
+    y_margin             : "18"
 
 header_pages:
   # - _pages/contact.md

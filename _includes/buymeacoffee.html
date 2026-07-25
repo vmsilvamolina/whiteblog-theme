@@ -1,0 +1,16 @@
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+  data-id="{{ site.addons.buymeacoffee.id }}"
+  data-description="{{ site.addons.buymeacoffee.description }}"
+  data-message="{{ site.addons.buymeacoffee.message }}"
+  data-color="{{ site.addons.buymeacoffee.color }}"
+  data-position="{{ site.addons.buymeacoffee.position }}"
+  data-x_margin="{{ site.addons.buymeacoffee.x_margin }}"
+  data-y_margin="{{ site.addons.buymeacoffee.y_margin }}"></script>
+{% if site.addons.buymeacoffee.color == "" or site.addons.buymeacoffee.color == nil %}
+<script>
+(function() {
+  var s = document.querySelector('script[data-name="BMC-Widget"]');
+  s.dataset.color = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim();
+})();
+</script>
+{% endif %}
