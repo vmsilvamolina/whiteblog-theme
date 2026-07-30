@@ -36,7 +36,7 @@ addons:
     description          : "Support me on Buy me a coffee!"
     message              : ""
     color                : ""                    # empty (default) uses the theme's --color-accent, or set a custom hex
-    position             : "Right"                # Left, Right
+    position             : "left"                # left, right
     x_margin             : "18"
     y_margin             : "18"
 
