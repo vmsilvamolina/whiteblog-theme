@@ -1003,6 +1003,10 @@ svg {
 }
 
 @media screen and (min-width: 950px) {
+  #bmc-wbtn {
+    transform: translateX(54px); // align with the sidebar's left edge (72px) instead of the mobile x_margin (18px)
+  }
+
   .nav-toggle {
     display: none;
   }
