@@ -38,7 +38,7 @@ addons:
     color                : ""                    # empty (default) uses the theme's --color-accent, or set a custom hex
     position             : "left"                # left, right
     x_margin             : "18"                   # mobile margin, aligned to the .container edge
-    x_margin_desktop     : "72"                   # margin at >= 950px, aligned to the sidebar's edge (applied in _layout.scss)
+    x_margin_desktop     : "72"                   # margin at >= 950px, aligned to the sidebar's edge (applied via JS in buymeacoffee.html)
     y_margin             : "18"
 
 header_pages:

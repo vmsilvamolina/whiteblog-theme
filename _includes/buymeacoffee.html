@@ -14,3 +14,26 @@
 })();
 </script>
 {% endif %}
+{% if site.addons.buymeacoffee.x_margin_desktop and site.addons.buymeacoffee.x_margin_desktop != "" %}
+<script>
+(function() {
+  var side = '{{ site.addons.buymeacoffee.position }}'.toLowerCase() === 'left' ? 'left' : 'right';
+  var mq = window.matchMedia('(min-width: 950px)');
+  function position() {
+    var btn = document.getElementById('bmc-wbtn');
+    if (!btn) return;
+    // the widget only sets style.left/right once at render time, so this override sticks
+    // through its hover/click animations (which only touch style.transform)
+    btn.style[side] = (mq.matches ? '{{ site.addons.buymeacoffee.x_margin_desktop }}' : '{{ site.addons.buymeacoffee.x_margin }}') + 'px';
+  }
+  var observer = new MutationObserver(function() {
+    if (document.getElementById('bmc-wbtn')) {
+      position();
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.body, { childList: true });
+  mq.addEventListener('change', position);
+})();
+</script>
+{% endif %}
