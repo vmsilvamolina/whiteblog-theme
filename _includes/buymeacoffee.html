@@ -10,7 +10,19 @@
 <script>
 (function() {
   var s = document.querySelector('script[data-name="BMC-Widget"]');
-  s.dataset.color = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim();
+  function accent() {
+    return getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim();
+  }
+  s.dataset.color = accent();
+
+  // the widget only paints the button's background once at render time, so follow
+  // theme toggles (data-theme attribute) manually to keep it in sync
+  new MutationObserver(function() {
+    var color = accent();
+    s.dataset.color = color;
+    var btn = document.getElementById('bmc-wbtn');
+    if (btn) btn.style.background = color;
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 })();
 </script>
 {% endif %}
