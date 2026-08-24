@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2026-08-23
+
+### Added
+- Buy Me a Coffee widget addon (`addons.buymeacoffee` in `_config.yml`), disabled by default
+- Widget color follows the theme toggle (light/dark) without a page reload
+- Separate desktop/mobile horizontal margins so the button aligns with the sidebar on wide screens and the content edge on mobile
+
+### Fixed
+- Widget `position` value is now compared lowercase, matching the third-party widget script's own comparison
+
 ## [0.4.2] - 2026-07-09
 
 ### Added
