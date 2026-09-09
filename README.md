@@ -3,10 +3,10 @@
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 ![Gem downloads](https://img.shields.io/gem/dt/whiteblog-theme.svg?colorB=brightgreen&style=flat)
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
+A minimal, wide and white Jekyll theme for technical blogs. Ships with a
+dark/light toggle, category pages, client-side search, automatic PNG preview
+generation for posts, an RSS feed, an automatic sitemap, reading-time
+estimates, and pluggable comment providers.
 
 ## Live preview
 
@@ -14,7 +14,23 @@ To experiment with this code, add some sample content and run `bundle exec jekyl
 
 ## Screenshot
 
-![Screenshot of whiteblog-theme](https://raw.githubusercontent.com/vmsilvamolina/whiteblog-theme/master/screenshot.png)
+![Screenshot of whiteblog-theme](https://raw.githubusercontent.com/vmsilvamolina/whiteblog-theme/main/screenshot.png)
+
+## Features
+
+- **Dark mode** — `[data-theme="dark"]` toggle with `prefers-color-scheme`
+  detection and `localStorage` persistence. Colours are CSS variables.
+- **Search** — client-side search over a generated `search.json`
+  (SimpleJekyllSearch, no external service).
+- **Categories** — category index and per-category listing.
+- **Post previews** — `_plugins/previews.rb` renders a social PNG per post
+  (see [Post preview plugin](#post-preview-plugin) for system requirements).
+- **SEO** — meta description, Open Graph and Twitter tags, and JSON-LD
+  `BlogPosting`, all derived from the post excerpt.
+- **Accessibility** — skip link, ARIA labels, accessible pagination,
+  keyboard-dismissable mobile nav, WCAG AA contrast.
+- **Comments** — Disqus, Cusdis or Giscus, selected in `_config.yml`.
+- **Analytics** — optional Google Analytics 4.
 
 ## Installation
 
@@ -38,20 +54,155 @@ Or install it yourself as:
 
     $ gem install whiteblog-theme
 
+## Configuration
 
-## Contributing
+All configuration lives in `_config.yml`.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/vmsilvamolina/whiteblog-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+### Layouts
+
+| Layout      | Use                                    |
+|-------------|----------------------------------------|
+| `default`   | Base for every other layout            |
+| `home`      | Paginated index                        |
+| `post`      | Blog entry                             |
+| `page`      | Static page with sidebar               |
+| `page-wide` | Static page without sidebar            |
+| `allposts`  | Full post listing                      |
+| `categories`| Category view                          |
+
+### Addons
+
+```yaml
+addons:
+  back_to_top      : true    # back-to-top button
+  share_post       : true    # share buttons on posts
+  old_post_warning : false   # banner on old posts
+  buymeacoffee:
+    id             : ""      # buymeacoffee username; empty disables the widget
+    description    : "Support me on Buy me a coffee!"
+    message        : ""
+    color          : ""      # empty uses the theme's --color-accent, or a hex
+    position       : "left"  # left, right
+    x_margin       : "18"    # mobile horizontal margin
+    x_margin_desktop : "72"  # margin at >= 950px, aligned to the sidebar edge
+    y_margin       : "18"
+```
+
+### Comments
+
+Set `comments.provider` and fill in the matching block. Any other blocks are
+ignored.
+
+```yaml
+comments:
+  provider : false           # false, "disqus", "cusdis", "giscus"
+```
+
+**Disqus** — create a site at [disqus.com](https://disqus.com/), then:
+
+```yaml
+comments:
+  provider : "disqus"
+  disqus:
+    shortname : "your-disqus-shortname"
+```
+
+**Cusdis** — self-hosted or [cusdis.com](https://cusdis.com/); copy the App ID
+from your dashboard:
+
+```yaml
+comments:
+  provider : "cusdis"
+  cusdis:
+    appId : "your-cusdis-app-id"
+```
+
+**Giscus** — enable GitHub Discussions on a public repo, install the
+[giscus app](https://github.com/apps/giscus), then run the configurator at
+[giscus.app](https://giscus.app/) to get the IDs:
+
+```yaml
+comments:
+  provider : "giscus"
+  giscus:
+    repo              : "username/repo-name"
+    repo_id           : "..."     # from giscus.app
+    category          : "General"
+    category_id       : "..."     # from giscus.app
+    mapping           : "pathname"
+    reactions_enabled : "1"
+    input_position    : "top"
+    theme             : "preferred_color_scheme"
+    lang              : "en"
+```
+
+Giscus and Cusdis follow the site's dark/light toggle without a page reload.
+
+### Analytics
+
+```yaml
+analytics:
+  google:
+    tracking_id : "G-XXXXXXXXXX"   # empty / false disables GA4
+```
+
+### Per-page frontmatter
+
+- `head_inline` — raw HTML injected into `<head>` for a single page (extra
+  meta tags, a page-specific stylesheet, etc.).
+- `slug` — overrides the slug used for the preview PNG path,
+  `assets/images/previews/<slug>.png`.
+
+## Post preview plugin
+
+`_plugins/previews.rb` generates one PNG per post via the `imgkit` gem, which
+shells out to **wkhtmltoimage**. If `pngquant` is on `PATH` the PNG is
+compressed in place. Both are external system binaries — install them before
+building:
+
+```bash
+# macOS
+brew install --cask wkhtmltopdf   # provides wkhtmltoimage
+brew install pngquant             # optional, for compression
+
+# Debian / Ubuntu
+apt-get install wkhtmltopdf pngquant
+```
+
+Add the gem to your site's `Gemfile`:
+
+```ruby
+group :jekyll_plugins do
+  gem "imgkit"
+end
+```
+
+GitHub Pages runs in `--safe` mode and will not execute this plugin; build and
+deploy the `_site` output yourself if you need previews.
 
 ## Development
 
 To set up your environment to develop this theme, run `bundle install`.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+```bash
+bundle exec jekyll serve            # local server at http://localhost:4000
+bundle exec jekyll serve --drafts   # include drafts
+bundle exec jekyll build            # production build
+```
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `whiteblog-theme.gemspec` accordingly.
+When the theme is released, only the files in `_layouts`, `_includes`,
+`_sass`, `_pages` and `assets` tracked with Git are bundled. To add a custom
+directory, edit the regexp in `whiteblog-theme.gemspec`.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/vmsilvamolina/whiteblog-theme. This project is intended to
+be a safe, welcoming space for collaboration, and contributors are expected to
+adhere to the [Contributor Covenant](http://contributor-covenant.org) code of
+conduct.
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The theme is available as open source under the terms of the
+[MIT License](https://opensource.org/licenses/MIT).
