@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- Obsidian-style callouts (`> [!note]`, `> [!tip]`, `> [!warning]`, `> [!danger]` and aliases) rendered at build time by `_plugins/callouts.rb`, also compatible with GitHub alerts
+
 ## [0.5.0] - 2026-08-23
 
 ### Added

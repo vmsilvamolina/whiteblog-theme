@@ -18,6 +18,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor imper
 
 > Blockquote test
 
+> [!note]
+> Callout with the default title.
+
+> [!tip] Custom title with `code`
+> Callout body with a [link](#title).
+>
+> Second paragraph.
+
+> [!warning]
+> Warning callout.
+
+> [!danger] Danger
+> Danger callout.
+
 - Small
 - List
 

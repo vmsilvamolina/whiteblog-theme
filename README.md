@@ -29,6 +29,7 @@ estimates, and pluggable comment providers.
   `BlogPosting`, all derived from the post excerpt.
 - **Accessibility** — skip link, ARIA labels, accessible pagination,
   keyboard-dismissable mobile nav, WCAG AA contrast.
+- **Callouts** — Obsidian-style `> [!note]` blocks (see [Callouts](#callouts)).
 - **Comments** — Disqus, Cusdis or Giscus, selected in `_config.yml`.
 - **Analytics** — optional Google Analytics 4.
 
@@ -179,6 +180,34 @@ end
 
 GitHub Pages runs in `--safe` mode and will not execute this plugin; build and
 deploy the `_site` output yourself if you need previews.
+
+## Callouts
+
+`_plugins/callouts.rb` turns Obsidian-style callouts into styled blocks at build
+time, so posts written in Obsidian render the same on the blog. GitHub alerts
+(`> [!WARNING]`) work too, since the type is case-insensitive.
+
+```markdown
+> [!tip] Optional custom title
+> Callout body. **Markdown** works as usual.
+>
+> Multiple paragraphs too.
+```
+
+| Variant | Types |
+|---------|-------|
+| note | `note`, `info`, `abstract`, `summary`, `tldr`, `todo`, `question`, `faq`, `example`, `quote` |
+| tip | `tip`, `hint`, `important`, `success`, `done` |
+| warning | `warning`, `caution`, `attention` |
+| danger | `danger`, `error`, `failure`, `bug` |
+
+Without a title, a default one is used (`Nota`, `Tip`, `Advertencia`, ...).
+Unknown types render as `note` with the type as title. The foldable markers
+(`[!note]+` / `[!note]-`) are accepted but the callout is always expanded.
+
+Jekyll does not load plugins from a gem theme: copy `_plugins/callouts.rb` into
+your site's `_plugins/` folder. Like any custom plugin, it does not run on
+GitHub Pages' `--safe` build.
 
 ## Development
 
