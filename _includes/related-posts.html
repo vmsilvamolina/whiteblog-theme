@@ -1,0 +1,65 @@
+{% comment %}
+  Related posts by shared category, most relevant first.
+  Falls back to most recent posts when the current post has no
+  category match with any other post.
+  Config: site.addons.related_posts.enabled (bool), .limit (int, default 3)
+{% endcomment %}
+{% assign max_related = site.addons.related_posts.limit | default: 3 %}
+{% assign date_format = site.theme.date_format | default: "%b %-d, %Y" %}
+{% assign max_shared = 0 %}
+
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign shared = 0 %}
+    {% for category in post.categories %}
+      {% if page.categories contains category %}
+        {% assign shared = shared | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if shared > max_shared %}
+      {% assign max_shared = shared %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign min_shared = 1 %}
+{% if max_shared == 0 %}
+  {% assign min_shared = 0 %}
+{% endif %}
+
+{% assign related_count = 0 %}
+{% capture related_html %}
+  {% for shared_target in (min_shared..max_shared) reversed %}
+    {% for post in site.posts %}
+      {% if related_count >= max_related %}{% break %}{% endif %}
+      {% if post.url != page.url %}
+        {% assign shared = 0 %}
+        {% for category in post.categories %}
+          {% if page.categories contains category %}
+            {% assign shared = shared | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {% if shared == shared_target %}
+          {% assign related_count = related_count | plus: 1 %}
+          <li class="post-resume">
+            <h3 class="post-resume-title">
+              <a href="{{ post.url | relative_url }}">
+                <span class="underline">{{ post.title | escape }}</span>
+              </a>
+            </h3>
+            <span class="text-secondary">{{ post.date | date: date_format }}</span>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}
+
+{% if related_count > 0 %}
+<section class="related-posts" aria-labelledby="related-posts-heading">
+  <h2 id="related-posts-heading">Posts relacionados</h2>
+  <ul>
+    {{ related_html }}
+  </ul>
+</section>
+{% endif %}
