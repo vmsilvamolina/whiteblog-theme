@@ -23,6 +23,8 @@ estimates, and pluggable comment providers.
 - **Search** — client-side search over a generated `search.json`
   (SimpleJekyllSearch, no external service).
 - **Categories** — category index and per-category listing.
+- **Related posts** — end-of-post section matched by shared category,
+  falling back to the most recent posts when there's no category overlap.
 - **Post previews** — `_plugins/previews.rb` renders a social PNG per post
   (see [Post preview plugin](#post-preview-plugin) for system requirements).
 - **SEO** — meta description, Open Graph and Twitter tags, and JSON-LD
@@ -78,6 +80,9 @@ addons:
   back_to_top      : true    # back-to-top button
   share_post       : true    # share buttons on posts
   old_post_warning : false   # banner on old posts
+  related_posts:
+    enabled        : true    # related posts section at the end of a post
+    limit          : 3       # max related posts to show
   buymeacoffee:
     id             : ""      # buymeacoffee username; empty disables the widget
     description    : "Support me on Buy me a coffee!"

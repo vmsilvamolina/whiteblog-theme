@@ -87,6 +87,10 @@ layout: default
       {{ content }}
     </div>
 
+    {% if site.addons.related_posts.enabled %}
+      {% include related-posts.html %}
+    {% endif %}
+
     <div class="row">
       {% if site.comments.provider%}
         {% include comments.html %}
