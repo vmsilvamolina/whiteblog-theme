@@ -6,8 +6,12 @@
   const LIGHT_THEME = 'light';
   const DARK_THEME = 'dark';
   
+  function getSavedTheme() {
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+
   function getThemePreference() {
-    const saved = localStorage.getItem(THEME_KEY);
+    const saved = getSavedTheme();
     if (saved) return saved;
     
     return window.matchMedia('(prefers-color-scheme: dark)').matches 
@@ -15,11 +19,23 @@
       : LIGHT_THEME;
   }
   
-  function applyTheme(theme) {
+  function applyTheme(theme, persist) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(THEME_KEY, theme);
-    
+    if (persist) {
+      try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    }
+
+    updateThemeColor();
     updateToggleButton(theme);
+  }
+
+  function updateThemeColor() {
+    const bg = getComputedStyle(document.documentElement)
+      .getPropertyValue('--color-bg').trim();
+    if (!bg) return;
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      meta.setAttribute('content', bg);
+    });
   }
   
   function updateToggleButton(theme) {
@@ -38,7 +54,7 @@
   function toggleTheme() {
     const current = document.documentElement.getAttribute('data-theme') || LIGHT_THEME;
     const newTheme = current === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
-    applyTheme(newTheme);
+    applyTheme(newTheme, true);
   }
   
   function init() {
@@ -52,7 +68,7 @@
     
     window.matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (e) => {
-        if (!localStorage.getItem(THEME_KEY)) {
+        if (!getSavedTheme()) {
           applyTheme(e.matches ? DARK_THEME : LIGHT_THEME);
         }
       });
