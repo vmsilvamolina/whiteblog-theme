@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-11-20
+
+### Added
+- Obsidian-style callouts (`> [!note]`, `> [!tip]`, `> [!warning]`, `> [!danger]` and aliases) rendered at build time by `_plugins/callouts.rb`, also compatible with GitHub alerts
+- Related posts section at the end of each post, matched by shared category with a fallback to the most recent posts (`addons.related_posts` in `_config.yml`)
+
 ### Changed
 - New color palette: ink violet in light mode, neon violet over the original dark background in dark mode; orange blockquote and magenta inline-code colors replaced by the primary color
 - Fonts switched from Space Grotesk / Fira Code to Geist / Geist Mono, with a new `--font-mono` variable
@@ -20,12 +26,6 @@ All notable changes to this project will be documented in this file.
 - `theme-color` meta now follows the theme toggle, not only the system preference
 - Footer no longer uses absolute positioning; it sits after the content and stays at the bottom on short pages
 - Hardcoded `white`, `#ccc` and `#FAFAFA` replaced by theme variables (pagination, copy button, warning icon, mobile menu dividers)
-
-## [0.6.0] - 2026-11-09
-
-### Added
-- Obsidian-style callouts (`> [!note]`, `> [!tip]`, `> [!warning]`, `> [!danger]` and aliases) rendered at build time by `_plugins/callouts.rb`, also compatible with GitHub alerts
-- Related posts section at the end of each post, matched by shared category with a fallback to the most recent posts (`addons.related_posts` in `_config.yml`)
 
 ## [0.5.0] - 2026-08-23
 
