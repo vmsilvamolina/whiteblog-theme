@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 - Fonts switched from Space Grotesk / Fira Code to Geist / Geist Mono, with a new `--font-mono` variable
 - Syntax highlighting now uses `--syn-*` CSS variables instead of hardcoded Monokai colors, and code blocks take their background from `--color-code-bg`
 - Header divider reduced from 4px to 2px
-- Post preview images use the new violet gradient and Geist (existing PNGs must be deleted to regenerate them)
+- Post preview plugin now renders with headless Chrome/Chromium instead of IMGKit + wkhtmltoimage; `imgkit` and `wkhtmltoimage-binary` gems removed
+- Post previews are now 1200×630 with the new violet gradient, Geist fonts and site title; long titles are clamped (existing PNGs must be deleted to regenerate them)
 
 ### Fixed
 - Share links had low contrast against their highlight in dark mode

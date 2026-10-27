@@ -161,26 +161,22 @@ analytics:
 
 ## Post preview plugin
 
-`_plugins/previews.rb` generates one PNG per post via the `imgkit` gem, which
-shells out to **wkhtmltoimage**. If `pngquant` is on `PATH` the PNG is
-compressed in place. Both are external system binaries — install them before
-building:
+`_plugins/previews.rb` renders a 1200×630 PNG per post (used as `og:image` and
+`twitter:image`) with **headless Chrome or Chromium**, styled by
+`assets/css/previews.css`. No gems are needed. The plugin looks for Chrome,
+Chromium or Edge in the usual install locations and on `PATH`; set
+`WHITEBLOG_CHROME` to use a specific binary. If none is found, previews are
+skipped with a warning and the build continues.
+
+Existing PNGs are never overwritten: delete one from `assets/images/previews/`
+to regenerate it. If `pngquant` is on `PATH` the PNG is compressed in place.
 
 ```bash
 # macOS
-brew install --cask wkhtmltopdf   # provides wkhtmltoimage
-brew install pngquant             # optional, for compression
+brew install pngquant                    # optional, for compression
 
 # Debian / Ubuntu
-apt-get install wkhtmltopdf pngquant
-```
-
-Add the gem to your site's `Gemfile`:
-
-```ruby
-group :jekyll_plugins do
-  gem "imgkit"
-end
+apt-get install chromium pngquant
 ```
 
 GitHub Pages runs in `--safe` mode and will not execute this plugin; build and

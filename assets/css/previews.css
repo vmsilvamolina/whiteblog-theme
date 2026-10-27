@@ -1,43 +1,75 @@
-html {
-    font-size: 16px;
-  }
-  
-  body {
-    background: #6B38D4;
-    background: linear-gradient(40deg, #6B38D4 15%, #B794FF 85%);
-    background: -webkit-linear-gradient(40deg, #6B38D4 15%, #B794FF 85%);
-    width: 600px;
-    height: 330px;
-    position: relative;
-    margin: 0;
-  }
-  
-  .box {
-    background-color: #FAF9FD;
-    color: #1A1726;
-    font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif;
-    padding: 25px; 
-    margin: 20px; 
-    height: 240px;
-    position: relative;
-  }
+/* Rendered at 600x315 CSS px with device scale factor 2 -> 1200x630 PNG */
+:root {
+  --preview-bg: #FAF9FD;
+  --preview-text: #1A1726;
+  --preview-muted: #6A6580;
+  --preview-primary: #6B38D4;
+  --preview-accent: #B794FF;
+}
 
-  .title {
-    position: absolute;
-    top: 50px;
-    max-width: 500px;
-    > h2 {
-        margin: 0;
-        font-size: 42px;
-    }
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .footer {
-    position: absolute;
-    bottom: 50px;
-    max-width: 500px;
-    > h3 {
-        margin: 0;
-        font-size: 20px;
-    }
+html,
+body {
+  margin: 0;
+  width: 600px;
+  height: 315px;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(40deg, var(--preview-primary) 15%, var(--preview-accent) 85%);
+  padding: 18px;
+  font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.box {
+  height: 100%;
+  background-color: var(--preview-bg);
+  color: var(--preview-text);
+  padding: 32px 36px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.title .hash {
+  color: var(--preview-primary);
+  font-family: 'Geist Mono', ui-monospace, Menlo, monospace;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-family: 'Geist Mono', ui-monospace, Menlo, monospace;
+  font-size: 14px;
+  color: var(--preview-muted);
+  white-space: nowrap;
+}
+
+.footer .author {
+  color: var(--preview-text);
+  font-weight: 500;
+}
+
+.footer .site {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
