@@ -1,37 +1,48 @@
 ---
 layout: default
-permalink: /categories/
-title: Categories
 ---
+{% assign categories = site.categories | sort %}
 <div class="container">
   <article class="post">
     <div id="navigation-space" class="row">
     </div>
     <header>
       <h1>
-        <span class="underline">Categories</span>
+        <span class="underline">{{ page.title | default: "Categories" }}</span>
       </h1>
     </header>
-    <div>
-      {% for category in site.categories %}
-      <div class="archive-group">
-        {% capture category_name %}{{ category | first }}{% endcapture %}
-        <div id="{{ category_name | slugize }}"></div>
-        <h2><a class="badge badge-{{ category_name }}">{{ category_name }}</a></h2>
-        <table>
-        {% for post in site.categories[category_name] %}
-          <tr>
-            <th>
-              (<time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>)
-            </th>
-          <th>
-            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-          </th>
-        </tr>
+
+    <nav class="category-index" aria-label="Categories">
+      <ul>
+        {% for category in categories %}
+        {% assign category_name = category[0] %}
+        <li>
+          <a class="badge" href="#{{ category_name | slugize }}">
+            {{ category_name }} <span class="badge-count">{{ category[1].size }}</span>
+          </a>
+        </li>
         {% endfor %}
-      </table>
-      </div>
-  {% endfor %}
-    </div>
+      </ul>
+    </nav>
+
+    {% for category in categories %}
+    {% assign category_name = category[0] %}
+    {% assign category_posts = category[1] %}
+    {% assign category_slug = category_name | slugize %}
+    <section class="archive-group" id="{{ category_slug }}" aria-labelledby="{{ category_slug }}-title">
+      <h2 class="archive-title" id="{{ category_slug }}-title">
+        <span class="archive-hash" aria-hidden="true">#</span>{{ category_name }}
+        <span class="archive-count">{{ category_posts.size }} {% if category_posts.size == 1 %}post{% else %}posts{% endif %}</span>
+      </h2>
+      <ul class="archive-list">
+        {% for post in category_posts %}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <span class="archive-post"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
   </article>
 </div>
