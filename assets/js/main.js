@@ -10,7 +10,7 @@ if (navigator.clipboard) {
   document.querySelectorAll("pre").forEach((block) => {
     const button = document.createElement("button");
     button.innerHTML = copyButtonSVG;
-    button.setAttribute("aria-label", "Copiar código");
+    button.setAttribute("aria-label", "Copy code");
     button.classList.add("copy-btn");
     block.style.position = "relative";
     block.appendChild(button);
@@ -31,12 +31,12 @@ async function copyCode(block, button) {
   try {
     await navigator.clipboard.writeText(text);
     button.innerHTML = checkmarkSVG;
-    button.setAttribute("aria-label", "Copiado");
+    button.setAttribute("aria-label", "Copied");
     button.classList.add("copy-success");
 
     setTimeout(() => {
       button.innerHTML = copyButtonSVG;
-      button.setAttribute("aria-label", "Copiar código");
+      button.setAttribute("aria-label", "Copy code");
       button.classList.remove("copy-success");
     }, 1000);
   } catch (err) {

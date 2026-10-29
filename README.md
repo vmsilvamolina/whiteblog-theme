@@ -202,7 +202,7 @@ time, so posts written in Obsidian render the same on the blog. GitHub alerts
 | warning | `warning`, `caution`, `attention` |
 | danger | `danger`, `error`, `failure`, `bug` |
 
-Without a title, a default one is used (`Nota`, `Tip`, `Advertencia`, ...).
+Without a title, a default one is used (`Note`, `Tip`, `Warning`, ...).
 Unknown types render as `note` with the type as title. The foldable markers
 (`[!note]+` / `[!note]-`) are accepted but the callout is always expanded.
 

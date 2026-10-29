@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- All UI text is now in English: skip link, aria-labels, theme toggle, copy button, pagination, search labels, related posts heading and default callout titles
+- Categories page redesigned: alphabetical order, index of category badges with post counts, `#` section headings, monospace dates without parentheses, and dates stacked above titles on mobile
+
+### Fixed
+- Category headings on the categories page were non-focusable anchors without `href`
+- Categories page used `<th>` for every cell; it is now a list of `<time>` + link items
+- Jumping to `/categories/#<category>` now leaves space above the section
+- Category names with spaces produced broken CSS class names
+
 ## [0.6.0] - 2026-11-20
 
 ### Added
