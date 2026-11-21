@@ -3,10 +3,9 @@ html {
   }
   
   body {
-    /* background: #614bc3; */
-    background: rgb(97,75,195);
-    background: linear-gradient(40deg, rgba(97,75,195,1) 15%, rgba(68,205,213,1) 85%);
-    background: -webkit-linear-gradient(40deg, rgba(97,75,195,1) 15%, rgba(68,205,213,1) 85%);
+    background: #6B38D4;
+    background: linear-gradient(40deg, #6B38D4 15%, #B794FF 85%);
+    background: -webkit-linear-gradient(40deg, #6B38D4 15%, #B794FF 85%);
     width: 600px;
     height: 330px;
     position: relative;
@@ -14,9 +13,9 @@ html {
   }
   
   .box {
-    background-color: #fff;
-    color: #000;
-    font-family: 'Space Grotesk';
+    background-color: #FAF9FD;
+    color: #1A1726;
+    font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif;
     padding: 25px; 
     margin: 20px; 
     height: 240px;
