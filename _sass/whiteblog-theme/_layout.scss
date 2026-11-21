@@ -101,6 +101,8 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -665,11 +667,12 @@ blockquote.callout-danger {
   border: none;
   cursor: pointer;
   padding: 0.25rem;
+  color: var(--syn-text);
 }
 
 .highlight pre button.copy-success {
   background-color: var(--color-success);
-  color: white;
+  color: var(--color-bg);
   border-radius: 4px;
 }
 
@@ -696,10 +699,8 @@ ul {
 }
 
 #site-footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 4rem;
+  min-height: 4rem;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
@@ -853,7 +854,7 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--color-bg);
   font-size: 9px;
   font-weight: bold;
 }
@@ -950,7 +951,7 @@ svg {
 
 .pagination a.current {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-bg);
 }
 
 .pagination a.disabled {
@@ -976,7 +977,7 @@ svg {
 
   &.current {
     background: var(--color-primary);
-    color: white;
+    color: var(--color-bg);
   }
 }
 
@@ -1045,7 +1046,7 @@ svg {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--color-notice);
     a {
       display: block;
     }

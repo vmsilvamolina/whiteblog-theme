@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- New color palette: ink violet in light mode, neon violet over the original dark background in dark mode; orange blockquote and magenta inline-code colors replaced by the primary color
+- Fonts switched from Space Grotesk / Fira Code to Geist / Geist Mono, with a new `--font-mono` variable
+- Syntax highlighting now uses `--syn-*` CSS variables instead of hardcoded Monokai colors, and code blocks take their background from `--color-code-bg`
+- Header divider reduced from 4px to 2px
+- Post preview images use the new violet gradient and Geist (existing PNGs must be deleted to regenerate them)
+
+### Fixed
+- Share links had low contrast against their highlight in dark mode
+- Mobile menu icon was black on the dark background
+- `theme-color` meta values now match the page backgrounds
+- Theme toggle no longer saves the system theme on first visit, so OS theme changes are followed until the user picks a theme manually
+- `theme-color` meta now follows the theme toggle, not only the system preference
+- Footer no longer uses absolute positioning; it sits after the content and stays at the bottom on short pages
+- Hardcoded `white`, `#ccc` and `#FAFAFA` replaced by theme variables (pagination, copy button, warning icon, mobile menu dividers)
+
+## [0.6.0] - 2026-11-09
+
 ### Added
 - Obsidian-style callouts (`> [!note]`, `> [!tip]`, `> [!warning]`, `> [!danger]` and aliases) rendered at build time by `_plugins/callouts.rb`, also compatible with GitHub alerts
 - Related posts section at the end of each post, matched by shared category with a fallback to the most recent posts (`addons.related_posts` in `_config.yml`)
