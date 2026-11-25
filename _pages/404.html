@@ -1,0 +1,29 @@
+---
+title: Page not found
+layout: error
+permalink: /404.html
+sitemap: false
+---
+<h1 class="sr-only">Page not found</h1>
+
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true">
+    <span class="terminal-dot"></span>
+    <span class="terminal-dot"></span>
+    <span class="terminal-dot"></span>
+  </div>
+  <div class="highlight">
+    <pre><code><span class="gp">$</span> cd <span class="s" id="missing-path">/this/page</span>
+<span class="go">cd: no such file or directory</span>
+<span class="gp">$</span> cd <a class="terminal-link" href="{{ '/' | relative_url }}">~</a> <span class="terminal-cursor" aria-hidden="true"></span></code></pre>
+  </div>
+</div>
+
+<a class="badge" href="{{ '/' | relative_url }}">Back to home</a>
+
+<script>
+  (function () {
+    var el = document.getElementById('missing-path');
+    if (el) el.textContent = window.location.pathname;
+  })();
+</script>

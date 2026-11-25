@@ -23,6 +23,8 @@
   .ld { color: var(--syn-string) } /* Literal.Date */
   .m { color: var(--syn-number) } /* Literal.Number */
   .s { color: var(--syn-string) } /* Literal.String */
+  .gp { color: var(--syn-keyword); user-select: none } /* Generic.Prompt */
+  .go { color: var(--syn-comment) } /* Generic.Output */
   .na { color: var(--syn-function) } /* Name.Attribute */
   .nb { color: var(--syn-text) } /* Name.Builtin */
   .nc { color: var(--syn-function) } /* Name.Class */

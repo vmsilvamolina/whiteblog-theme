@@ -59,6 +59,12 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - whiteblogtheme.gemspec
+  - README.md
+  - CHANGELOG.md
+  - CLAUDE.md
+  - LICENSE.txt
+  - azure-pipelines.yml
+  - screenshot.png
 
 comments:
   provider               : false                 # false (default), "disqus", "cusdis", "giscus"

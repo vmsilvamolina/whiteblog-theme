@@ -12,12 +12,16 @@ permalink: /search/
 </div>
 
 <script defer src="{{ '/assets/js/jekyll-search.min.js' | relative_url }}"></script>
-<script type="text/javascript">
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('results-container'),
-  json: '/search.json',
-  searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-  limit: 50,
-})
+<script>
+// The library is deferred, so wait until it has run before initializing
+document.addEventListener('DOMContentLoaded', function () {
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ "/search.json" | relative_url }}',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: '<li class="search-empty">No results found</li>',
+    limit: 50,
+  });
+});
 </script>

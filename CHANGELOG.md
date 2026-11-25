@@ -8,7 +8,21 @@ All notable changes to this project will be documented in this file.
 - All UI text is now in English: skip link, aria-labels, theme toggle, copy button, pagination, search labels, related posts heading and default callout titles
 - Categories page redesigned: alphabetical order, index of category badges with post counts, `#` section headings, monospace dates without parentheses, and dates stacked above titles on mobile
 
+### Added
+- Custom 404 page: a terminal window showing `cd` into the missing path, with a blinking cursor and a link back home
+- `error` layout: centered content without title or sidebar
+- Syntax colors for console prompts and output (`.gp`, `.go`)
+
 ### Fixed
+- Search returned nothing: the inline init ran before the deferred SimpleJekyllSearch library loaded (`ReferenceError`); it now waits for `DOMContentLoaded` and uses `relative_url` for `search.json`
+- Search input was white in dark mode; it now uses theme colors with a visible focus ring, and shows a message when there are no results
+- `page-wide` layout duplicated `<title>` and favicon, and lacked the skip link and `#main-content` target; it now extends `default` with `sidebar: false`
+- About page squashed the photo into an oval on narrow screens; columns now stack on mobile
+- `page` layout had an unclosed `<div>`
+- Copy button was added to every `<pre>`, not only code blocks
+- `main` did not grow to fill the row, so pages without sidebar were not centered
+- Badges inside post content were styled as underlined links
+- Repo files (README, CHANGELOG, LICENSE, screenshot, etc.) were copied into the built site
 - Category headings on the categories page were non-focusable anchors without `href`
 - Categories page used `<th>` for every cell; it is now a list of `<time>` + link items
 - Jumping to `/categories/#<category>` now leaves space above the section
