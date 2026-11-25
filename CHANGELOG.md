@@ -4,14 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Changed
-- All UI text is now in English: skip link, aria-labels, theme toggle, copy button, pagination, search labels, related posts heading and default callout titles
-- Categories page redesigned: alphabetical order, index of category badges with post counts, `#` section headings, monospace dates without parentheses, and dates stacked above titles on mobile
+## [0.7.0] - 2026-11-25
 
 ### Added
 - Custom 404 page: a terminal window showing `cd` into the missing path, with a blinking cursor and a link back home
 - `error` layout: centered content without title or sidebar
 - Syntax colors for console prompts and output (`.gp`, `.go`)
+
+### Changed
+- All UI text is now in English: skip link, aria-labels, theme toggle, copy button, pagination, search labels, related posts heading and default callout titles
+- Categories page redesigned: alphabetical order, index of category badges with post counts, `#` section headings, monospace dates without parentheses, and dates stacked above titles on mobile
 
 ### Fixed
 - Search returned nothing: the inline init ran before the deferred SimpleJekyllSearch library loaded (`ReferenceError`); it now waits for `DOMContentLoaded` and uses `relative_url` for `search.json`
