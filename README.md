@@ -70,6 +70,7 @@ All configuration lives in `_config.yml`.
 | `post`      | Blog entry                             |
 | `page`      | Static page with sidebar               |
 | `page-wide` | Static page without sidebar            |
+| `error`     | Centered page without title or sidebar (used by the 404 page) |
 | `allposts`  | Full post listing                      |
 | `categories`| Category view                          |
 

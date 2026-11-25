@@ -7,7 +7,7 @@ const checkmarkSVG = `Copied <svg xmlns="http://www.w3.org/2000/svg" width="16" 
 </svg>`;
 
 if (navigator.clipboard) {
-  document.querySelectorAll("pre").forEach((block) => {
+  document.querySelectorAll(".highlight:not(.terminal .highlight) pre").forEach((block) => {
     const button = document.createElement("button");
     button.innerHTML = copyButtonSVG;
     button.setAttribute("aria-label", "Copy code");

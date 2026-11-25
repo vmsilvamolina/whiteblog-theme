@@ -10,7 +10,9 @@
   {% include header.html %}
 
   <div class="main-wrapper">
+    {% unless layout.sidebar == false %}
     {% include sidebar.html %}
+    {% endunless %}
     <main id="main-content">
       {{ content }}
     </main>
